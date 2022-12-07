@@ -1,0 +1,33 @@
+<section>
+
+    <mat-card class="card">
+        <h1>Bienvenue !</h1>
+        <p>Connectez-vous</p>
+    
+    <form [formGroup]="userFormConnexion" (ngSubmit)="onSubmit()">
+        <!-- Input email -->
+        <mat-form-field appearance="fill">
+            <mat-label>Adresse e-mail</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="exemple@exemple.com">
+            <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+    
+        <!-- Input password -->
+        <mat-form-field appearance="fill">
+            <mat-label>Mot de Passe</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Votre mot de passe">
+            <mat-icon matSuffix >password</mat-icon>
+        </mat-form-field>
+    
+        <!-- Bouton submit -->
+        <button mat-raised-button type="submit" color="primary" [disabled]="userFormConnexion.invalid">Valider</button>
+        <!-- Renvois vers overview après validation -->
+    
+    </form>
+    
+    <p>Pas encore de compte?</p>
+    <p>Cliquez <a (click)="onRegister()">ici</a> pour vous inscrire</p>
+    <!-- Renvois vers register -->
+    </mat-card>
+    
+    </section>

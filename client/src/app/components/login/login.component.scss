@@ -1,0 +1,35 @@
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('https://i.picsum.photos/id/293/6000/4000.jpg?hmac=aMxbGEceC_xdAFXhpS_u1c_Qm5lajfpXgWv0-VNj9As') top left no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card{
+    padding: 30px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    margin: 10px 0 20px;
+    &:nth-child(4) {
+        margin: 20px 0 0;
+    }
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}

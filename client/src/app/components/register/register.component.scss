@@ -1,0 +1,48 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 100px;
+  }
+  
+  .sendButton {
+    width: 30%;
+    margin: 10px;
+  }
+  
+  .addSkills {
+    // display: flex;
+    // justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .labelSkill {
+   margin-right: 20px;
+  }
+  
+  .plusSkill {
+    margin-left: 20px;
+  }
+  
+  .inputSkill {
+    width: 100%;
+  }
+  
+  .image-profil {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  }
