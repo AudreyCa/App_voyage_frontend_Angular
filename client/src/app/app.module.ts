@@ -18,6 +18,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ListModalComponent } from './modals/list-modal/list-modal.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -26,7 +31,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     LoginComponent,
     RegisterComponent,
     ProfilComponent,
-    ListsComponent
+    ListsComponent,
+    ListModalComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatIconModule,
     MatInputModule,
     MatSidenavModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

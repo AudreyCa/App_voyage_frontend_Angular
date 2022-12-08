@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Router } from 'express';
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
+import { DataService } from 'src/app/services/data-user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,20 +11,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   userFormConnexion!: FormGroup;
-  // user = new User();
+  user = new User();
 
-  constructor( 
+  constructor(
     private _fb: FormBuilder,
-    // private _route: Router
-    // private _userService: UserService,
-    // private _backend: BackendService
-    ) { }
+    private _route: Router,
+    private _dataBack: DataService,
+  ) { }
 
   ngOnInit(): void {
 
     this.userFormConnexion = this._fb.group({
-      email:["", Validators.required],
-      password:["", Validators.required]
+      user_mail: [this.user.user_mail, Validators.required],
+      user_mdp: [this.user.user_mdp, Validators.required]
     })
 
 
@@ -31,26 +32,32 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     // On récupère les valeurs du formulaire qu'on log après
     const form = this.userFormConnexion.value;
-    console.log(form);
+    console.log('form: ', form);
 
-    // // Pour lier au backend :
-    // // Et on n'oublie pas d'instancier le nouvel utilisateur en haut
-    // this.user = Object.assign(this.user, form)
-    // console.log(this.user)
-    // // On envoie au backend ce qu'on a fait avec Oject assign
-    // this._backend.postLogin(this.user).subscribe((response:any) => {
-    //   console.log('token ' + response.token)
+    // Pour lier au backend :
+    // On envoie au backend ce qu'on a fait avec Object assign
+    this.user = Object.assign(this.user, form)
+    console.log('this.user', this.user)
+
+    //  puis, on les envoie au backend
+    // Et on n'oublie pas d'instancier le nouvel utilisateur en haut
+    this._dataBack.postLogin(this.user).subscribe((response: any) => {
+      // let {headers, status, body} = response
+
+      console.log('token ' + response.accessToken)
+
+      // on récupère le token pour le stocker dans le localStorage avec setItem
+      localStorage.setItem('token', response.accessToken)
+
+      this._route.navigate(['/profil'])
+
+    })
 
     //   // on récupère le token pour le stocker dans le localStorage avec setItem
+    // let {headers, status, body} = response
+    //   console.log('token ' + response.token)
     //   localStorage.setItem('token', response.token)
-    
-    //   this._route.navigate(['/overview'])
 
-    // })
-    
-
-    // // On récupère le mail du formulaire ci dessus
-    // const mailValue = this.userFormConnexion.value.email
     // // On récupère l'avatar de l'API reqres
     // this._userService.getUsers().subscribe((value:any) => {
     //   const avatarUsers = value.data[1].avatar
@@ -60,7 +67,6 @@ export class LoginComponent implements OnInit {
     //   localStorage.setItem('user', JSON.stringify(user))
     // })
 
-    // pour le routing
   }
 
   /**Cette méthode nous permet de renvoyer 
@@ -68,7 +74,9 @@ export class LoginComponent implements OnInit {
    * sur 'ici' pour s'enregistrer
    */
   onRegister() {
-    // this._route.navigate(['/register'])
+    this._route.navigate(['/register'])
   }
 
 }
+
+// bobo@gmail.com
