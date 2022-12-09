@@ -42,30 +42,19 @@ export class LoginComponent implements OnInit {
     //  puis, on les envoie au backend
     // Et on n'oublie pas d'instancier le nouvel utilisateur en haut
     this._dataBack.postLogin(this.user).subscribe((response: any) => {
-      // let {headers, status, body} = response
-
+      
+      // console.log('user ' + JSON.stringify(response.user))
+      // const dataUser = JSON.stringify(response.user)
       console.log('token ' + response.accessToken)
+      const tokenUser = response.accessToken
 
-      // on récupère le token pour le stocker dans le localStorage avec setItem
-      localStorage.setItem('token', response.accessToken)
+      // On les met dans le localStorage
+      localStorage.setItem('token', JSON.stringify({token: tokenUser}))
 
-      this._route.navigate(['/profil'])
+      // puis on redirige vers la page vers laquelle on veut que l'utilisateur aille
+      this._route.navigate(['/overview'])
 
     })
-
-    //   // on récupère le token pour le stocker dans le localStorage avec setItem
-    // let {headers, status, body} = response
-    //   console.log('token ' + response.token)
-    //   localStorage.setItem('token', response.token)
-
-    // // On récupère l'avatar de l'API reqres
-    // this._userService.getUsers().subscribe((value:any) => {
-    //   const avatarUsers = value.data[1].avatar
-    //   // On met le mail et l'avatar dans un objet
-    //   const user = {email: mailValue, avatar: avatarUsers}
-    //   // On les met dans les crée dans le localStorage
-    //   localStorage.setItem('user', JSON.stringify(user))
-    // })
 
   }
 

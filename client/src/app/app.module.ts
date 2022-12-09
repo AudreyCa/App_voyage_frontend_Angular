@@ -21,7 +21,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ListModalComponent } from './modals/list-modal/list-modal.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { OverviewComponent } from './components/overview/overview.component';
+import { SideBarRightComponent } from './components/side-bar-right/side-bar-right.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 
@@ -33,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     ProfilComponent,
     ListsComponent,
     ListModalComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    OverviewComponent,
+    SideBarRightComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

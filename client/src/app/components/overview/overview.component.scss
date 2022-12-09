@@ -1,0 +1,15 @@
+.overview  {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    .router-outlet {
+        width: 80%;
+        height: 100%;
+        background-color: #dc7e7055;
+    }
+    .side-bar {
+        width: 20%;
+        height: 100%;
+        background-color: #e8a984;
+    }
+}

@@ -21,5 +21,10 @@ export class DataService {
     return this._http.post(`${this.backend}/login`, loginUser);
   }
 
+  // pour recup le token dans auth.interceptor
+  getToken() {
+    return localStorage.getItem('token')
+  }
+
 
 }

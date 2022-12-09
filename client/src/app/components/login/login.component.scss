@@ -5,13 +5,16 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url('https://i.picsum.photos/id/293/6000/4000.jpg?hmac=aMxbGEceC_xdAFXhpS_u1c_Qm5lajfpXgWv0-VNj9As') top left no-repeat;
-    background-position: center;
+    background: url('^/assets/Images/fond-ecran-voyage-appli.png') no-repeat;
+    background-position: bottom;
     background-size: cover;
 }
 
 .card{
-    padding: 30px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.796);
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.711);
 }
 
 h1 {
