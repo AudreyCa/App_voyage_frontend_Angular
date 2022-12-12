@@ -30,14 +30,14 @@
       <!-- Input password -->
       <mat-form-field appearance="fill">
         <mat-label>Mot de Passe</mat-label>
-        <input matInput formControlName="user_mdp">
+        <input matInput type="password" formControlName="user_mdp">
         <mat-icon matSuffix>password</mat-icon>
       </mat-form-field>
 
       <!-- Input confirm password -->
       <mat-form-field appearance="fill">
         <mat-label>Confirmation du mot de passe</mat-label>
-        <input matInput formControlName="confirmPassword" placeholder="Confirmer le mot de passe">
+        <input matInput type="password" formControlName="confirmPassword" placeholder="Confirmer le mot de passe">
         <mat-icon matSuffix>password</mat-icon>
       </mat-form-field>
 
@@ -49,55 +49,3 @@
   </mat-card>
 
 </section>
-
-
-
-
-<!-- Input date de naissance -->
-<!-- <mat-form-field appearance="fill">
-    <mat-label>Date de naissance</mat-label>
-    <input matInput formControlName="birthDate" type="date" minlength="2">
-  </mat-form-field> -->
-
-<!-- Input telephone -->
-<!-- <mat-form-field appearance="fill">
-    <mat-label>Numéro de téléphone</mat-label>
-    <span matPrefix>+33 &nbsp;</span>
-    <input type="tel" matInput formControlName="phoneNumber" placeholder="0 00 00 00 00">
-    <mat-icon matSuffix>phone</mat-icon>
-  </mat-form-field> -->
-
-<!-- Input de l'adresse -->
-<!-- <mat-form-field appearance="fill">
-    <mat-label>Adresse</mat-label>
-    <input type="text" matInput formControlName="street" placeholder="Votre adresse" minlength="2">
-    <mat-icon matSuffix>home</mat-icon>
-  </mat-form-field> -->
-
-<!-- Input Code Postal -->
-<!-- <mat-form-field appearance="fill">
-    <mat-label>Code postal</mat-label>
-    <input matInput formControlName="zipCode" #postalCode maxlength="5" placeholder="Ex. 75000" minlength="2">
-    <mat-hint text-align="end">{{postalCode.value.length}} / 5</mat-hint>
-    <mat-icon matSuffix>home</mat-icon>
-  </mat-form-field> -->
-
-<!-- Input ville -->
-<!-- <mat-form-field appearance="fill">
-    <mat-label>Ville</mat-label>
-    <input matInput formControlName="city" placeholder="Ex. Paris" minlength="2">
-    <mat-icon matSuffix>home</mat-icon>
-  </mat-form-field> -->
-
-<!-- Input pays -->
-<!-- <mat-form-field appearance="fill">
-    <mat-label>Pays</mat-label>
-    <input type="text" placeholder="Taper votre pays" aria-label="pays" matInput [matAutocomplete]="auto"
-    formControlName="country" minlength="2">
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option}}
-      </mat-option>
-    </mat-autocomplete>
-    <mat-icon matSuffix>language</mat-icon>
-  </mat-form-field> -->

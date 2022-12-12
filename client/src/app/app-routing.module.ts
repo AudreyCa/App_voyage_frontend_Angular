@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactComponent } from './components/contact/contact.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
    {path:'overview', component: OverviewComponent, canActivate:[AuthGuard],
       children:
         [{path:'profil', component: ProfilComponent, canActivate:[AuthGuard]},
-        {path:'lists', component: ListsComponent, canActivate:[AuthGuard]}]},
+        {path:'lists', component: ListsComponent, canActivate:[AuthGuard]},
+        {path:'contact', component: ContactComponent, canActivate:[AuthGuard]}]},
    {path:'**', component: NotFoundComponent}
 ];
 

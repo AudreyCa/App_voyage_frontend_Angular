@@ -3,10 +3,15 @@
     <h2>Menu</h2>
     <div class="nav">
             <a routerLink="profil" routerLinkActive="active">
-                <mat-icon>person</mat-icon><p>Mon profil</p>
+                <mat-icon>person</mat-icon><p>Mon compte</p>
             </a>
+
             <a routerLink="lists" routerLinkActive="active">
                 <mat-icon>list_alt</mat-icon><p>Mes listes</p>
+            </a>
+
+            <a routerLink="contact" routerLinkActive="active">
+                <mat-icon>contact_support</mat-icon><p>Nous contacter</p>
             </a>
 
             <div class="escape" (click)="onLogOut()">

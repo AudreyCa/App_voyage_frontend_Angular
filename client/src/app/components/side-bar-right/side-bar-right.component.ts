@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './side-bar-right.component.html',
   styleUrls: ['./side-bar-right.component.scss']
 })
-export class SideBarRightComponent {
+export class SideBarRightComponent  implements OnInit {
 
   constructor(private _route: Router) { }
 

@@ -1,0 +1,13 @@
+.modale-delete {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    text-align: center;
+
+    .boutons {
+        display: flex;
+        justify-content: space-around;
+        
+    }
+}

@@ -49,10 +49,10 @@ export class LoginComponent implements OnInit {
       const tokenUser = response.accessToken
 
       // On les met dans le localStorage
-      localStorage.setItem('token', JSON.stringify({token: tokenUser}))
+      localStorage.setItem('token', tokenUser)
 
       // puis on redirige vers la page vers laquelle on veut que l'utilisateur aille
-      this._route.navigate(['/overview'])
+      this._route.navigate(['/overview/lists'])
 
     })
 

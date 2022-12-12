@@ -1,12 +1,17 @@
 .side-bar-right {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     height: 100%;
     width: 100%;
-    padding: 10%;
+    h2 {
+      padding: 10%;
+      font-size: 30px;
+    }
     .nav {
         display: flex;
         flex-direction: column;
+        padding: 10%;
         a {
           display: flex;
           align-items: center;
@@ -21,6 +26,9 @@
               height: 50px;
               width: 50px;
           }
+        }
+        .escape {
+          padding: 10px;
         }
     }
 }

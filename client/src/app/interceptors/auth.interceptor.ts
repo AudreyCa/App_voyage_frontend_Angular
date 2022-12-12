@@ -39,7 +39,7 @@ export class AuthInterceptor implements HttpInterceptor {
             //  On réagit en fonction du statut émis par le serveur ou le client
             switch (error.status) {
               case 400:
-                message = "Bad request";
+                message = "Mauvaise adresse e-mail. Veuillez en rentrer une différente.";
                 break;
               case 401:
                 message = "Unauthorized";

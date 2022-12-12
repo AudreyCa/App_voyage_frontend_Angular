@@ -25,6 +25,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OverviewComponent } from './components/overview/overview.component';
 import { SideBarRightComponent } from './components/side-bar-right/side-bar-right.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ContactComponent } from './components/contact/contact.component';
+import { MatButtonModule } from '@angular/material/button';
+import { DeleteProfilModalComponent } from './modals/delete-profil-modal/delete-profil-modal.component';
 
 
 
@@ -38,7 +41,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ListModalComponent,
     NotFoundComponent,
     OverviewComponent,
-    SideBarRightComponent
+    SideBarRightComponent,
+    ContactComponent,
+    DeleteProfilModalComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     MatSidenavModule,
     MatAutocompleteModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers: [
     {

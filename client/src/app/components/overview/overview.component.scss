@@ -2,10 +2,14 @@
     display: flex;
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
     .router-outlet {
         width: 80%;
         height: 100%;
-        background-color: #dc7e7055;
+        background: url('^/assets/Images/Fond-ecran-overview.png') no-repeat;
+        background-position: center;
+        background-size: cover;
     }
     .side-bar {
         width: 20%;
