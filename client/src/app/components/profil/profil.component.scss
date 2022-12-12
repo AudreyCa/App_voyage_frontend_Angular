@@ -1,5 +1,7 @@
 section {
-    background-color: white;
+    background: url('^/assets/Images/Fond-ecran-overview.png') no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
     height: 100%;
     display: flex;
@@ -18,20 +20,21 @@ section {
     }
 
     h2 {
-        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .formulaire {
-        padding: 20px;
+        padding: 30px;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        align-items: center;
-        width: 200px;
+        justify-content: center;
+        width: 350px;
 
         mat-form-field {
-            min-width: 300px;
-        }
+            width: 300px;
+        } 
 
         .sendButton {
             margin-top: 10px;

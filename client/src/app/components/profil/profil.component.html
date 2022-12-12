@@ -2,9 +2,9 @@
 
   <h1>Mon compte</h1>
 
-  <h2>Mettre à jour mes informations</h2>
+    <mat-card class="formulaire" *ngIf="dataUser">
 
-  <section class="formulaire" *ngIf="dataUser">
+    <h2>Mettre à jour mes informations</h2>
 
     <form [formGroup]="userForm" (ngSubmit)="onSubmit(user)">
 
@@ -51,5 +51,7 @@
 
     <button mat-raised-button class="deleteButton" type="submit" color="warn" (click)="onDeleteProfil()">Supprimer mon compte</button>
 
-  </section>
+  </mat-card>
+
+
 </section>

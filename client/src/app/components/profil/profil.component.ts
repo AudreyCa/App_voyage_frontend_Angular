@@ -48,9 +48,9 @@ export class ProfilComponent implements OnInit {
       this.dataUser = response[0]
       console.log('ici dataUser : ', this.dataUser);
       this.dataUserId = this.dataUser.user_id,
-        this.dataUserLastname = this.dataUser.user_lastname,
-        this.dataUserFirstname = this.dataUser.user_firstname,
-        this.dataUserMail = this.dataUser.user_mail
+      this.dataUserLastname = this.dataUser.user_lastname,
+      this.dataUserFirstname = this.dataUser.user_firstname,
+      this.dataUserMail = this.dataUser.user_mail
     })
   }
 
@@ -97,7 +97,7 @@ export class ProfilComponent implements OnInit {
         width: "300px",
         enterAnimationDuration: '800ms',
         exitAnimationDuration: '800ms',
-        data : this.dataUserId
+        data: this.dataUserId
       }
     )
   }
