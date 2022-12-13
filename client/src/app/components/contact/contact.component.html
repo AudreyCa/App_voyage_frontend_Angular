@@ -6,15 +6,15 @@
 
     <form class="formulaire-contact" [formGroup]="contactForm" (ngSubmit)="onSend(this)">
 
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <input matInput placeholder="Nom / Prénom" formControlName="user_name" />
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <input matInput type="email" placeholder="Email" formControlName="user_email" />
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <textarea matInput placeholder="Message" formControlName="user_message"></textarea>
       </mat-form-field>
 

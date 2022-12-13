@@ -7,35 +7,35 @@
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
       <!-- Input nom -->
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Nom</mat-label>
         <input matInput formControlName="user_lastName" type="text" minlength="2">
         <mat-icon matSuffix>account_circle</mat-icon>
       </mat-form-field>
 
       <!-- Input prénom -->
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Prénom</mat-label>
         <input matInput formControlName="user_firstName" type="text" minlength="2">
         <mat-icon matSuffix>account_circle</mat-icon>
       </mat-form-field>
 
       <!-- Input email -->
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Adresse e-mail</mat-label>
         <input matInput type="email" formControlName="user_mail" placeholder="exemple@exemple.com" minlength="2">
         <mat-icon matSuffix>email</mat-icon>
       </mat-form-field>
 
       <!-- Input password -->
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Mot de Passe</mat-label>
         <input matInput type="password" formControlName="user_mdp">
         <mat-icon matSuffix>password</mat-icon>
       </mat-form-field>
 
       <!-- Input confirm password -->
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Confirmation du mot de passe</mat-label>
         <input matInput type="password" formControlName="confirmPassword" placeholder="Confirmer le mot de passe">
         <mat-icon matSuffix>password</mat-icon>
