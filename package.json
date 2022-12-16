@@ -1,11 +1,22 @@
 {
   "name": "app_voyage_frontend_angular",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Projet app-voyage",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "electron": "electron .",
+    "electron-build": "ng build && electron ."
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@capacitor/cli": "^4.6.1",
+    "electron": "^22.0.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^4.6.1",
+    "@capacitor/core": "^4.6.1",
+    "@capacitor/ios": "^4.6.1"
+  }
 }

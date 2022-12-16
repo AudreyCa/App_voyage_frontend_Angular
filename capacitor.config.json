@@ -1,0 +1,6 @@
+{
+  "appId": "com.voyage_app.angular",
+  "appName": "Organisez vos voyages",
+  "webDir": "client/dist/client",
+  "bundledWebRuntime": false
+}
