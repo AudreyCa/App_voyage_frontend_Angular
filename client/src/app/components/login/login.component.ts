@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
-import { DataService } from 'src/app/services/data-user.service';
+import { DataService } from 'src/app/services/data-user/data-user.service';
 
 @Component({
   selector: 'app-login',
@@ -68,4 +68,3 @@ export class LoginComponent implements OnInit {
 
 }
 
-// bobo@gmail.com

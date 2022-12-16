@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { DeleteProfilModalComponent } from 'src/app/modals/delete-profil-modal/delete-profil-modal.component';
 import { User } from 'src/app/models/user.model';
-import { DataService } from 'src/app/services/data-user.service';
+import { DataService } from 'src/app/services/data-user/data-user.service';
 
 @Component({
   selector: 'app-profil',

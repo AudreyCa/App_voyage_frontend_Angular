@@ -7,7 +7,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { catchError, Observable } from 'rxjs';
-import { DataService } from '../services/data-user.service';
+import { DataService } from '../services/data-user/data-user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()

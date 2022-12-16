@@ -16,20 +16,34 @@ section {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.711);
     background: rgba($color: white, $alpha: 0.3);
     backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
 h1 {
     font-size: 40px;
+    a {
+        color: rgb(5, 5, 193);
+        // text-decoration: underline;
+        &:hover {
+            color: 
+            #ffd6a8;
+        }
+    }
 }
 
 p {
+    text-align: center;
     margin: 10px 0 20px;
     &:nth-child(4) {
         margin: 20px 0 0;
     }
     a {
-        color: blue;
-        text-decoration: underline;
+        color: rgb(5, 5, 193);
+        // text-decoration: underline;
+        &:hover {
+            color: 
+            #ffd6a8;
+        }
     }
 }
 

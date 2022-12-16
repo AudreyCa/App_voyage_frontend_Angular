@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
-import { DataService } from 'src/app/services/data-user.service';
+import { DataService } from 'src/app/services/data-user/data-user.service';
 
 @Component({
   selector: 'app-register',
@@ -67,6 +67,14 @@ constructor(
     this._route.navigate(['/login'])
 
   }
+
+    /**Cette méthode nous permet de renvoyer 
+   * vers le register quand on clique 
+   * sur 'ici' pour s'enregistrer
+   */
+    onLog() {
+      this._route.navigate(['/login'])
+    }
 
 }
 

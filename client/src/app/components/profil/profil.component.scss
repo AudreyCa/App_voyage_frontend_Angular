@@ -34,6 +34,7 @@ section {
         width: 350px;
         background: rgba($color: white, $alpha: 0.3);
         backdrop-filter: blur(10px);
+        box-sizing: border-box;
 
         mat-form-field {
             width: 300px;
