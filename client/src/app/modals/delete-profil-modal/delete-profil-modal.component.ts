@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DataService } from 'src/app/services/data-user/data-user.service';
+import { DataUserService } from 'src/app/services/data-user/data-user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class DeleteProfilModalComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public idUser:number,
    private _dialogRef: MatDialogRef<DeleteProfilModalComponent>,
-    private _dataServ: DataService,
+    private _dataServ: DataUserService,
     private _route: Router) { }
 
 

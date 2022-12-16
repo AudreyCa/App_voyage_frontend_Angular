@@ -1,0 +1,62 @@
+<section class="add-list">
+
+    <form>
+
+        <!-- !!!!!!! le rendre également obligatoire en TS validator required -->
+        <!-- Input pour le titre de la liste -->
+        <mat-form-field class="input-title" appearance="outline">
+            <mat-label>Titre de cette liste</mat-label>
+            <input matInput #message maxlength="1000" placeholder="Ex. Visite de New York" required>
+            <mat-icon matSuffix>create</mat-icon>
+            <mat-icon matSuffix>check</mat-icon>
+            <!-- <mat-hint>{{message.value.length}} / 1000</mat-hint> -->
+        </mat-form-field>
+        
+
+        <!-- Input pour créer les descritpions de la liste -->
+        <mat-form-field class="input-desc" appearance="outline">
+            <mat-label>À faire</mat-label>
+            <input matInput placeholder="Ex. Visiter le musée...">
+            <mat-icon matSuffix>check</mat-icon>
+        </mat-form-field>
+
+    </form>
+
+    <!-- Affichage des descriptions -->
+    <div class="list-check">
+        <ul>
+            <li>
+                <!-- <li *ngFor="let subtask of task.subtasks"> -->
+                <mat-checkbox color="primary">
+                    Descritpion
+                    <!-- {{subtask.name}} -->
+                </mat-checkbox>
+            </li>
+            <mat-divider [inset]="true"></mat-divider>
+        </ul>
+    </div>
+
+
+    <!-- Les boutons en footer -->
+    <div class="btn-footer">
+        <button mat-fab extended color="primary">
+            <mat-icon>playlist_add_check</mat-icon>
+          Valider
+        </button>
+        <button mat-fab extended color="warn">
+            <mat-icon>delete_forever</mat-icon>
+          Supprimer
+        </button>
+        <button mat-fab extended color="primary">
+            <mat-icon>print</mat-icon>
+          Imprimer
+        </button>
+        <!-- <a mat-fab extended routerLink=".">
+          <mat-icon>favorite</mat-icon>
+          Link
+        </a> -->
+      </div>
+
+
+
+</section>

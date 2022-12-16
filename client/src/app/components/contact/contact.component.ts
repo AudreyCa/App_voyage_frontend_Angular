@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/models/user.model';
 import { ContactService } from 'src/app/services/contact/contact.service';
 
@@ -15,7 +16,8 @@ export class ContactComponent implements OnInit {
   myControl = new FormControl('');
 
   constructor( private _fb: FormBuilder,
-    private _contact:ContactService ) { }
+    private _contact:ContactService,
+    private _snackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
     this.contactForm = this._fb.group({
@@ -32,6 +34,8 @@ export class ContactComponent implements OnInit {
 
     this._contact.postMsg(contactMSG).subscribe((response: any) => {
       console.log('envoyé au back : ', response);
+      this._snackBar.open('Votre message a bien été envoyé', 'ok', { verticalPosition: 'top' })
+      return;
     })
   }
 

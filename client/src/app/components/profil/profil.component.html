@@ -2,7 +2,7 @@
 
   <h1>Mon compte</h1>
 
-    <mat-card class="formulaire" *ngIf="dataUser">
+  <mat-card class="formulaire" *ngIf="dataUser">
 
     <h2>Mettre à jour mes informations</h2>
 
@@ -11,21 +11,25 @@
       <!-- Input nom -->
       <mat-form-field appearance="outline">
         <mat-label>Nom</mat-label>
-        <input matInput formControlName="user_lastName" type="text" minlength="2" [placeholder]="dataUserLastname" autocomplete>
+        <input matInput formControlName="user_lastName" type="text" minlength="2" [placeholder]="dataUserLastname"
+          autocomplete>
         <mat-icon matSuffix>account_circle</mat-icon>
       </mat-form-field>
+
 
       <!-- Input prénom -->
       <mat-form-field appearance="outline">
         <mat-label>Prénom</mat-label>
-        <input matInput formControlName="user_firstName" type="text" minlength="2" [placeholder]="dataUserFirstname" autocomplete>
+        <input matInput formControlName="user_firstName" type="text" minlength="2" [placeholder]="dataUserFirstname"
+          autocomplete>
         <mat-icon matSuffix>account_circle</mat-icon>
       </mat-form-field>
 
       <!-- Input email -->
       <mat-form-field appearance="outline">
         <mat-label>Adresse e-mail</mat-label>
-        <input matInput type="email" formControlName="user_mail" placeholder="exemple@exemple.com" minlength="2" [placeholder]="dataUserMail" autocomplete>
+        <input matInput type="email" formControlName="user_mail" placeholder="exemple@exemple.com" minlength="2"
+          [placeholder]="dataUserMail" autocomplete>
         <mat-icon matSuffix>email</mat-icon>
       </mat-form-field>
 
@@ -44,12 +48,13 @@
       </mat-form-field>
 
 
-      <button mat-raised-button class="sendButton" type="submit" color="primary"
-        [disabled]="userForm.invalid">Valider les changements</button>
+      <button mat-raised-button class="sendButton" type="submit" color="primary" [disabled]="userForm.invalid">Valider
+        les changements</button>
 
     </form>
 
-    <button mat-raised-button class="deleteButton" type="submit" color="warn" (click)="onDeleteProfil()">Supprimer mon compte</button>
+    <button mat-raised-button class="deleteButton" type="submit" color="warn" (click)="onDeleteProfil()">Supprimer mon
+      compte</button>
 
   </mat-card>
 

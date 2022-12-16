@@ -5,7 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { DeleteProfilModalComponent } from 'src/app/modals/delete-profil-modal/delete-profil-modal.component';
 import { User } from 'src/app/models/user.model';
-import { DataService } from 'src/app/services/data-user/data-user.service';
+import { DataUserService } from 'src/app/services/data-user/data-user.service';
+
 
 @Component({
   selector: 'app-profil',
@@ -26,7 +27,7 @@ export class ProfilComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    private _dataBack: DataService,
+    private _dataBack: DataUserService,
     private _snackBar: MatSnackBar,
     private _route: Router,
     private _matDialog: MatDialog
@@ -95,8 +96,8 @@ export class ProfilComponent implements OnInit {
     this._matDialog.open(DeleteProfilModalComponent,
       {
         width: "300px",
-        enterAnimationDuration: '800ms',
-        exitAnimationDuration: '800ms',
+        enterAnimationDuration: '500ms',
+        exitAnimationDuration: '500ms',
         data: this.dataUserId
       }
     )

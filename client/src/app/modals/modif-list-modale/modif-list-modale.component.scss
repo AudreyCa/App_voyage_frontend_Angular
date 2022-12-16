@@ -1,0 +1,49 @@
+.add-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #ecb475;
+    
+    form {
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .input-title {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .input-desc {
+            margin-left: 10%;
+            width: 90%;
+        }
+
+    }
+
+    .list-check {
+        display: flex;
+        flex-direction: column;
+        margin-top: -20px;
+        ul {
+            list-style-type: none;
+            margin-left: -50%;
+        }
+    }
+
+    .btn-footer {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+
+        button {
+            margin: 10px;
+        }
+    }
+
+}

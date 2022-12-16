@@ -7,7 +7,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { catchError, Observable } from 'rxjs';
-import { DataService } from '../services/data-user/data-user.service';
+import { DataUserService } from '../services/data-user/data-user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()
@@ -15,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   backendUrl = "http://localhost:8080";
 
-  constructor(private _dataBack: DataService,
+  constructor(private _dataBack: DataUserService,
     private _snackBar: MatSnackBar) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {

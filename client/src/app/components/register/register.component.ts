@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
-import { DataService } from 'src/app/services/data-user/data-user.service';
+import { DataUserService } from 'src/app/services/data-user/data-user.service';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
 constructor(
   private _fb: FormBuilder,
-  private _dataBack: DataService,
+  private _dataBack: DataUserService,
   private _snackBar: MatSnackBar,
   private _route: Router
   ) { }

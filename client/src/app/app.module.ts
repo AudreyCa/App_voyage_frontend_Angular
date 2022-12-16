@@ -19,7 +19,6 @@ import { ProfilComponent } from './components/profil/profil.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { ListModalComponent } from './modals/list-modal/list-modal.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OverviewComponent } from './components/overview/overview.component';
@@ -28,6 +27,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ContactComponent } from './components/contact/contact.component';
 import { MatButtonModule } from '@angular/material/button';
 import { DeleteProfilModalComponent } from './modals/delete-profil-modal/delete-profil-modal.component';
+import { AddListModaleComponent } from './modals/add-list-modale/add-list-modale.component';
+import { ModifListModaleComponent } from './modals/modif-list-modale/modif-list-modale.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -38,12 +40,13 @@ import { DeleteProfilModalComponent } from './modals/delete-profil-modal/delete-
     RegisterComponent,
     ProfilComponent,
     ListsComponent,
-    ListModalComponent,
     NotFoundComponent,
     OverviewComponent,
     SideBarRightComponent,
     ContactComponent,
-    DeleteProfilModalComponent
+    DeleteProfilModalComponent,
+    AddListModaleComponent,
+    ModifListModaleComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import { DeleteProfilModalComponent } from './modals/delete-profil-modal/delete-
     MatAutocompleteModule,
     MatSnackBarModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [
     {
