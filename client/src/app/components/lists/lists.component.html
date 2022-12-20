@@ -4,8 +4,8 @@
 
 <div class="container-list">
 
-    <div class="lists" (click)="onClickCard()">
-        <p>Titre</p>
+    <div class="lists" *ngFor="let list of listsArray" (click)="onClickCard()">
+        <p>{{list.list_title}}</p>
     </div>
 
     <div class="add">

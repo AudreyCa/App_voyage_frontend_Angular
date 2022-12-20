@@ -4,6 +4,8 @@
     align-items: flex-end;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
     h2 {
       padding: 10%;
       font-size: 30px;
@@ -12,6 +14,8 @@
         display: flex;
         flex-direction: column;
         padding: 10%;
+        flex-wrap: wrap;
+        box-sizing: border-box;
         a {
           display: flex;
           align-items: center;
@@ -28,21 +32,19 @@
           }
         }
         .escape {
-          padding: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          p {
+            margin: 1px;
+          }
+          mat-icon {
+            margin: 10px 10px 10px 5px;
+          }
         }
     }
 }
 
-.escape {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  p {
-    margin: 1px;
-  }
-  mat-icon {
-    margin: 10px 10px 10px 5px;
-  }
-}

@@ -1,6 +1,6 @@
 export class User {
 
-    readonly _id!: number;
+    readonly user_id!: number;
     user_firstName?: string;
     user_lastName?: string;
     user_mail!: string;

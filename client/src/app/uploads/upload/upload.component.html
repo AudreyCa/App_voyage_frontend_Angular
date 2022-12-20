@@ -1,0 +1,11 @@
+<section>
+
+    <h2>Envoie de fichier</h2>
+    <input type="file" name="document" ng2FileSelect [uploader]="uploader" accept="*">
+    <button type="button" (click)="uploader.uploadAll()"
+        [disabled]="!uploader.getNotUploadedItems.length">Upload</button>
+
+    <h2>Téléchargement</h2>
+    <button (click)="onDownloadFile('liste.pdf')">Download</button>
+
+</section>

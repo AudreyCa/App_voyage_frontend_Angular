@@ -30,7 +30,8 @@ import { DeleteProfilModalComponent } from './modals/delete-profil-modal/delete-
 import { AddListModaleComponent } from './modals/add-list-modale/add-list-modale.component';
 import { ModifListModaleComponent } from './modals/modif-list-modale/modif-list-modale.component';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { UploadComponent } from './uploads/upload/upload.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { MatDividerModule } from '@angular/material/divider';
     ContactComponent,
     DeleteProfilModalComponent,
     AddListModaleComponent,
-    ModifListModaleComponent
+    ModifListModaleComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatSnackBarModule,
     HttpClientModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    FileUploadModule
   ],
   providers: [
     {

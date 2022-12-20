@@ -30,7 +30,7 @@ export class ListsService {
    * @param  {number} id
    * @returns Observable
    */
-  getAllListsOneUser(id: number): Observable<any> {
+  getAllListsOneUser(id: any): Observable<any> {
     return this._http.get(`${this.backend}/list/` + id);
   }
 
