@@ -2,20 +2,19 @@
 
     <h1>Mes listes</h1>
 
-<div class="container-list">
+    <div class="container-list">
 
-    <div class="lists" *ngFor="let list of listsArray" (click)="onClickCard()">
-        <p>{{list.list_title}}</p>
-    </div>
-
-    <div class="add">
-        <div class="btn" (click)="onClickPlus()">
-            <p> + </p>
+        <div class="lists" *ngFor="let list of listsArray" (click)="onClickCard()">
+            <p>{{list.list_title}}</p>
         </div>
+
+        <div class="add">
+            <div class="btn" (click)="onClickPlus()">
+                <p> + </p>
+            </div>
+        </div>
+
     </div>
-
-
-</div>
 
 
 

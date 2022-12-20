@@ -14,7 +14,7 @@ export class ListsService {
 
 
   
-  // -----------------------------CRUD DES LISTS------------------------------------------------
+  // ----------------------------- CRUD DES LISTS ----------------------------------------
 
   /** Cette méthode permet, à un utilisateur de créer une liste (en lui donnant un titre).
    * @param  {number} id

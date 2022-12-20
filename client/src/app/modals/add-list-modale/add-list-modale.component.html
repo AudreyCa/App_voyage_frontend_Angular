@@ -1,71 +1,37 @@
 <section class="add-list">
 
+    <h2>Entrez le titre de votre nouvelle liste</h2>
+
     <form>
 
         <!-- Input pour le titre de la liste -->
-        <div class="input-title">
-            <mat-form-field appearance="outline">
-                <mat-label>Titre de cette liste</mat-label>
-                <input matInput type="text" [formControl]="titleControl" #message maxlength="1000"
-                    placeholder="Ex. Visite de New York" required (keypress)="onSendTitle($event)">
-            </mat-form-field>
-            <button type="submit" class="btn-validate">
-                <mat-icon (click)="onAddTitle()">check</mat-icon>
-            </button>
-            <!-- <mat-hint>{{message.value.length}} / 1000</mat-hint> -->
-        </div>
-
-        <p>Qu'avez-vous prévu de faire ?</p>
-
-        <!-- Input pour créer les descritpions de la liste -->
-        <div class="input-desc">
-            <div class="icon-list">
-                <mat-icon>list</mat-icon>
-            </div>
-            <mat-form-field appearance="outline">
-                <mat-label>Ecrivez-ici...</mat-label>
-                <input matInput type="text" [formControl]="descControl" placeholder="Ex. Visiter le musée...">
-            </mat-form-field>
-            <button type="submit" class="btn-validate">
-                <mat-icon (click)="onAddTitle()">check</mat-icon>
-            </button>
-        </div>
+        <mat-form-field class="input-title" appearance="outline">
+            <mat-label>Titre de cette liste</mat-label>
+            <input matInput type="text" [formControl]="titleControl" #message maxlength="1000"
+                placeholder="Ex. Visite de New York" (keypress)="onSendTitle($event)" required>
+        </mat-form-field>
 
     </form>
-
-    <!-- Affichage des descriptions -->
-    <div class="list-check">
-        <ul>
-            <!-- ! Itéré sur les listes ci dessous -->
-            <li>
-                <input type="checkbox" id="checkDesc">
-                <label for="checkDesc">Descritpion</label>
-            </li>
-            <mat-divider [inset]="true"></mat-divider>
-        </ul>
-    </div>
-
+    
+    <p>(Vous pourrez modifier votre liste une fois qu'elle sera crée)</p>
+    
 
     <!-- Les boutons en footer -->
     <div class="btn-footer">
+
+        <!-- bouton valider -->
         <button mat-fab extended color="primary" (click)="onValidateList()" [disabled]="titleControl.invalid">
             <mat-icon>playlist_add_check</mat-icon>
             Valider
         </button>
-        <button mat-fab extended color="warn" [disabled]="titleControl.invalid">
-            <mat-icon>delete_forever</mat-icon>
-            Supprimer
-        </button>
-        <button mat-fab extended color="primary" [disabled]="titleControl.invalid">
-            <mat-icon>print</mat-icon>
-            Imprimer
-        </button>
-        <!-- <a mat-fab extended routerLink=".">
-          <mat-icon>favorite</mat-icon>
-          Link
-        </a> -->
-    </div>
 
+        <!-- bouton annuler -->
+        <button mat-fab extended color="warn" (click)="onCloseModale()" [disabled]="titleControl.invalid">
+            <mat-icon>delete_forever</mat-icon>
+            Annuler
+        </button>
+
+    </div>
 
 
 </section>
