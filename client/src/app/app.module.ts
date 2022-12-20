@@ -32,6 +32,10 @@ import { ModifListModaleComponent } from './modals/modif-list-modale/modif-list-
 import { MatDividerModule } from '@angular/material/divider';
 import { UploadComponent } from './uploads/upload/upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ModifTitleModaleComponent } from './modals/modif-title-modale/modif-title-modale.component';
+import { AddDescModaleComponent } from './modals/add-desc-modale/add-desc-modale.component';
+import { SuppListModaleComponent } from './modals/supp-list-modale/supp-list-modale.component';
+import { PdfModaleComponent } from './modals/pdf-modale/pdf-modale.component';
 
 
 @NgModule({
@@ -48,7 +52,11 @@ import { FileUploadModule } from 'ng2-file-upload';
     DeleteProfilModalComponent,
     AddListModaleComponent,
     ModifListModaleComponent,
-    UploadComponent
+    UploadComponent,
+    ModifTitleModaleComponent,
+    AddDescModaleComponent,
+    SuppListModaleComponent,
+    PdfModaleComponent
   ],
   imports: [
     BrowserModule,

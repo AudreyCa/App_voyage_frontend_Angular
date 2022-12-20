@@ -4,8 +4,33 @@
 
     <div class="container-list">
 
-        <div class="lists" *ngFor="let list of listsArray" (click)="onClickCard()">
+        <div class="lists" *ngFor="let list of listsArray">
+
+            <!-- titre liste -->
             <p>{{list.list_title}}</p>
+
+            <div class="modale">
+                <!-- Modif titre -->
+                <div class="btn-modale" (click)="onClickModif()">
+                    <mat-icon>create</mat-icon>
+                </div>
+
+                <!-- Ajout description -->
+                <div class="btn-modale" (click)="onClickAddDesc()">
+                    <mat-icon>view_list</mat-icon>
+                </div>
+
+                <!-- Supprimer liste -->
+                <div class="btn-modale" (click)="onClickSuppList()">
+                    <mat-icon>delete_forever</mat-icon>
+                </div>
+
+                <!-- Modif titre -->
+                <div class="btn-modale" (click)="onClickPrintList()">
+                    <mat-icon>print</mat-icon>
+                </div>
+            </div>
+
         </div>
 
         <div class="add">
@@ -13,6 +38,7 @@
                 <p> + </p>
             </div>
         </div>
+
 
     </div>
 

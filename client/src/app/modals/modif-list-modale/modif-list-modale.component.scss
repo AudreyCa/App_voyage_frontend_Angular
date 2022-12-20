@@ -3,63 +3,75 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 30px;
-    box-sizing: border-box;
-    background-color: #ecb475;
-    
-    form {
+    // background-color: #ecb475;
+    background: rgba($color: #ecb475, $alpha: 0.8);
+    backdrop-filter: blur(10px);
+
+    .cancel {
+        display: flex;
+        align-self: flex-end;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .detail {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .form-desc {
         min-width: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
-        p {
-            margin-top: 10px;
-            text-align: left;
-            font-size: 20px;
-            font-weight: 400;
-        }
-
-        .input-title {
-            min-width: 300px;
-            height: 50px;
-            margin-bottom: 30px;
-            display: flex;
-        }
 
         .input-desc {
             min-width: 260px;
             height: 50px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             display: flex;
-
-            .icon-list {
-                height: 50px;
-                width: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: auto;
-            }
         }
 
     }
 
-    .list-check {
+    .list-check-desc {
         display: flex;
         flex-direction: column;
         margin-top: -20px;
+
         ul {
             list-style-type: none;
             margin-left: -50%;
 
-            #checkDesc:checked + label {
-                text-decoration: line-through;
+            li {
+                display: flex;
+                align-items: center;
+
+                input[type="checkbox"] {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 20px;
+                }
+
+                label {
+                    font-size: 18px;
+                }
+
+                #checkDesc:checked+label {
+                    text-decoration: line-through;
+                }
             }
 
-       }
+
+        }
     }
+
+    .modif-titre {}
 
     .btn-footer {
         display: flex;
@@ -73,6 +85,7 @@
 
 }
 
+
 .btn-validate {
     margin-left: 10px;
     height: 55px;
@@ -81,4 +94,10 @@
     border-radius: 5px;
     border: none;
     color: white;
+}
+
+
+h2,
+p {
+    text-align: center;
 }

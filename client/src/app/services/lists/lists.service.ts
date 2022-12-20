@@ -46,11 +46,11 @@ export class ListsService {
 
   /** Cette méthode permet, à l'utilisateur de modifier le titre de sa liste.
    * @param  {number} id
-   * @param  {any} listTitle
+   * @param  {any} newList
    * @returns Observable
    */
-  putList(id: number, listTitle:any): Observable<any> {
-    return this._http.put(`${this.backend}/list/` + id, listTitle);
+  putList(newList: any, id: number): Observable<any> {
+    return this._http.put(`${this.backend}/list/` + id, newList);
   }
 
 

@@ -4,18 +4,18 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ListsService } from 'src/app/services/lists/lists.service';
 
 @Component({
-  selector: 'app-add-list-modale',
-  templateUrl: './add-list-modale.component.html',
-  styleUrls: ['./add-list-modale.component.scss']
+  selector: 'app-modif-title-modale',
+  templateUrl: './modif-title-modale.component.html',
+  styleUrls: ['./modif-title-modale.component.scss']
 })
-export class AddListModaleComponent implements OnInit {
+export class ModifTitleModaleComponent implements OnInit {
 
   title!: string;
   isChecked = false;
-  titleControl = new FormControl();
+  newTitleControl = new FormControl();
 
   constructor(@Inject(MAT_DIALOG_DATA) public idUser: number,
-    private _dialogRef: MatDialogRef<AddListModaleComponent>,
+    private _dialogRef: MatDialogRef<ModifTitleModaleComponent>,
     private _listsService: ListsService
   ) { }
 
@@ -27,16 +27,17 @@ export class AddListModaleComponent implements OnInit {
 
   /** Cette méthode sert à valider le titre pour l'envoyer à la BDD, sortir de la modale et refresh la page de liste afined voir les listes s'afficher directement 
    */
-  onValidateList() {
+  onUpdateList() {
 
     // On récupère le titre de la liste
-    const titleForm = this.titleControl.value;
+    const titleForm = this.newTitleControl.value;
     console.log('log de la value de l\'input title : ', titleForm);
 
     const newListTitle = { list_title: titleForm }
+    console.log('newlisttitile :', newListTitle);
 
-    // Puis, on les envoie à la BDD
-    this._listsService.postList(this.idUser, newListTitle).subscribe((titleList: any) => {
+    // Puis, on les update dans la BDD
+    this._listsService.putList(newListTitle, this.idUser).subscribe((titleList: any) => {
       console.log('envoyé à la BDD : ', titleList)
     })
 
@@ -49,9 +50,9 @@ export class AddListModaleComponent implements OnInit {
   /** Cette méthode sert à valider avec la touche entrée (accessibilité) puis à exectuer la methode onValidateList
    * @param  {KeyboardEvent} event
    */
-  onSendTitle(event: KeyboardEvent) {
+  onUpdateTitle(event: KeyboardEvent) {
     if (event.code === "Enter") {
-      this.onValidateList()
+      this.onUpdateList()
       this._dialogRef.close()
       window.location.href = "/overview/lists";
     }

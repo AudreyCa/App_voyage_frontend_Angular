@@ -63,4 +63,9 @@ export class ModifListModaleComponent implements OnInit {
     window.location.href = "/overview/lists";
   }
 
+  onCancel() {
+    this._dialogRef.close()
+    window.location.href = "/overview/lists";
+  }
+
 }

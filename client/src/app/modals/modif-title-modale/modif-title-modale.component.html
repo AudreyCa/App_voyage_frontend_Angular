@@ -1,0 +1,35 @@
+<section class="add-list">
+
+    <h2>Modifier le titre de votre liste</h2>
+
+    <form>
+
+        <!-- Input pour le titre de la liste -->
+        <mat-form-field class="input-title" appearance="outline">
+            <mat-label>Nouveau titre</mat-label>
+            <input matInput type="text" [formControl]="newTitleControl" #message maxlength="1000"
+                placeholder="Ecrivez ici ..." (keypress)="onUpdateTitle($event)" required>
+        </mat-form-field>
+
+    </form>
+    
+
+    <!-- Les boutons en footer -->
+    <div class="btn-footer">
+
+        <!-- bouton valider -->
+        <button mat-fab extended color="primary" (click)="onUpdateList()" [disabled]="newTitleControl.invalid">
+            <mat-icon>playlist_add_check</mat-icon>
+            Valider
+        </button>
+
+        <!-- bouton annuler -->
+        <button mat-fab extended color="warn" (click)="onCloseModale()" [disabled]="newTitleControl.invalid">
+            <mat-icon>delete_forever</mat-icon>
+            Annuler
+        </button>
+
+    </div>
+
+
+</section>

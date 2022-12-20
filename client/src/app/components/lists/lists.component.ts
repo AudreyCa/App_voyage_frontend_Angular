@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AddDescModaleComponent } from 'src/app/modals/add-desc-modale/add-desc-modale.component';
 import { AddListModaleComponent } from 'src/app/modals/add-list-modale/add-list-modale.component';
-import { ModifListModaleComponent } from 'src/app/modals/modif-list-modale/modif-list-modale.component';
+import { ModifTitleModaleComponent } from 'src/app/modals/modif-title-modale/modif-title-modale.component';
+import { PdfModaleComponent } from 'src/app/modals/pdf-modale/pdf-modale.component';
+import { SuppListModaleComponent } from 'src/app/modals/supp-list-modale/supp-list-modale.component';
 import { DataUserService } from 'src/app/services/data-user/data-user.service';
-import { DescriptionsService } from 'src/app/services/descriptions/descriptions.service';
 import { ListsService } from 'src/app/services/lists/lists.service';
 
 @Component({
@@ -39,6 +41,8 @@ export class ListsComponent implements OnInit {
 
   }
 
+  /** Cette méthode sert à ajouter une list via le boutton add
+  */
   onClickPlus() {
     this._matDialog.open(AddListModaleComponent,
       {
@@ -50,18 +54,57 @@ export class ListsComponent implements OnInit {
     )
   }
 
-  onClickCard() {
-    this._matDialog.open(ModifListModaleComponent,
+  /** Cette méthode sert à modifier le titre de la liste via une modale
+   */
+  onClickModif() {
+    this._matDialog.open(ModifTitleModaleComponent,
       {
         minWidth: "300px",
         enterAnimationDuration: '500ms',
-        exitAnimationDuration: '500ms'
+        exitAnimationDuration: '500ms',
+        data: this.dataUserId
       }
     )
   }
 
+  /** Cette méthode sert à ajouter des descriptions via une modale
+   */
+  onClickAddDesc() {
+    this._matDialog.open(AddDescModaleComponent,
+      {
+        minWidth: "300px",
+        enterAnimationDuration: '500ms',
+        exitAnimationDuration: '500ms',
+        data: this.dataUserId
+      }
+    )
+  }
 
-  
+  /** Cette méthode sert à supprimer la liste via une modale
+   */
+  onClickSuppList() {
+    this._matDialog.open(SuppListModaleComponent,
+      {
+        minWidth: "300px",
+        enterAnimationDuration: '500ms',
+        exitAnimationDuration: '500ms',
+        data: this.dataUserId
+      }
+    )
+  }
+
+  /** Cette méthode sert à générer la list en pdf via une modale
+  */
+  onClickPrintList() {
+    this._matDialog.open(PdfModaleComponent,
+      {
+        minWidth: "300px",
+        enterAnimationDuration: '500ms',
+        exitAnimationDuration: '500ms',
+        data: this.dataUserId
+      }
+    )
+  }
 
 
 }

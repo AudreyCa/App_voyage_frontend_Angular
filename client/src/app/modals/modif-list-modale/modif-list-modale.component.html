@@ -1,27 +1,18 @@
 <section class="add-list">
+        <mat-icon class="cancel" (click)="onCancel()">cancel</mat-icon>
 
-    <form>
+    <!-- !Inclure le titre de la liste actuelle -->
+    <!-- <h2>{{}}</h2> -->
+    <h2>Titre de la liste</h2>
 
-        <!-- Input pour le titre de la liste -->
-        <div class="input-title">
-            <mat-form-field appearance="outline">
-                <mat-label>Titre de cette liste</mat-label>
-                <input matInput type="text" [formControl]="titleControl" #message maxlength="1000"
-                    placeholder="Ex. Visite de New York" required (keypress)="onSendTitle($event)">
-            </mat-form-field>
-            <button type="submit" class="btn-validate">
-                <mat-icon (click)="onAddTitle()">check</mat-icon>
-            </button>
-            <!-- <mat-hint>{{message.value.length}} / 1000</mat-hint> -->
-        </div>
 
-        <p>Qu'avez-vous prévu de faire ?</p>
+    <p class="detail">Ajoutez des détails à cette liste</p>
+
+
+    <form class="form-desc">
 
         <!-- Input pour créer les descritpions de la liste -->
         <div class="input-desc">
-            <div class="icon-list">
-                <mat-icon>list</mat-icon>
-            </div>
             <mat-form-field appearance="outline">
                 <mat-label>Ecrivez-ici...</mat-label>
                 <input matInput type="text" [formControl]="descControl" placeholder="Ex. Visiter le musée...">
@@ -33,16 +24,50 @@
 
     </form>
 
+
+
     <!-- Affichage des descriptions -->
-    <div class="list-check">
+    <div class="list-check-desc">
         <ul>
             <!-- ! Itéré sur les listes ci dessous -->
             <li>
                 <input type="checkbox" id="checkDesc">
-                <label for="checkDesc">Descritpion</label>
+                <label for="checkDesc">Description</label>
             </li>
-            <mat-divider [inset]="true"></mat-divider>
+            
         </ul>
+    </div>
+
+
+    <p>_______________________________</p>
+    <!-- <mat-divider [inset]="true"></mat-divider> -->
+
+
+    <p>Je souhaite modifier le titre de cette liste :</p>
+
+    <form class="modif-titre">
+
+        <!-- Input pour le titre de la liste -->
+        <div class="input-title">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Modifier le titre de cette liste</mat-label>
+                <!-- ! Inclure le titre de la liste actuelle en placeholder -->
+                <input matInput type="text" [formControl]="titleControl" #message maxlength="1000" placeholder="Titre"
+                    (keypress)="onSendTitle($event)">
+            </mat-form-field>
+
+            <button type="submit" class="btn-validate">
+                <mat-icon (click)="onAddTitle()">check</mat-icon>
+            </button>
+
+        </div>
+
+    </form>
+
+    <!-- Supprimer la liste -->
+    <div>
+        <p>Je clique <span class="delete">ici</span> pour supprimer cette liste.<br> Attention ! cette action est définitive, vous ne pourrez pas récupérer ces informations.</p>
     </div>
 
 
@@ -53,12 +78,12 @@
             Valider
         </button>
         <button mat-fab extended color="warn" [disabled]="titleControl.invalid">
-            <mat-icon>delete_forever</mat-icon>
-            Supprimer
+            <mat-icon>cancel</mat-icon>
+            Annuler
         </button>
         <button mat-fab extended color="primary" [disabled]="titleControl.invalid">
             <mat-icon>print</mat-icon>
-            Imprimer
+            PDF
         </button>
         <!-- <a mat-fab extended routerLink=".">
           <mat-icon>favorite</mat-icon>
