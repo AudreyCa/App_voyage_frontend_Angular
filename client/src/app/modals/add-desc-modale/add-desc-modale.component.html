@@ -1,1 +1,59 @@
-<p>add-desc-modale works!</p>
+<section class="add-list">
+
+<h2>{{datalist.list_title}}</h2>
+
+
+<p class="detail">Ajoutez des détails à cette liste</p>
+
+
+<form class="form-desc">
+
+    <!-- Input pour créer les descritpions de la liste -->
+    <div class="input-desc">
+        <mat-form-field appearance="outline">
+            <mat-label>Ecrivez-ici...</mat-label>
+            <input matInput type="text" [formControl]="descControl" placeholder="Ex. Visiter le musée..." (keypress)="onSendDesc($event)">
+        </mat-form-field>
+        <button type="submit" class="btn-validate" (click)="onAddDesc()">
+            <mat-icon>playlist_add_check</mat-icon>
+        </button>
+    </div>
+
+</form>
+
+
+
+<!-- Affichage des descriptions -->
+<div class="list-check-desc" *ngIf="descArray">
+    <ul *ngFor="let desc of descArray">
+        <li>
+            <input type="checkbox" id="checkDesc">
+            <label for="checkDesc">
+                {{desc.detail_description}}
+            </label>
+            <mat-icon matSuffix (click)="onDeleteDesc()">cancel</mat-icon>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- Les boutons en footer -->
+<div class="btn-footer">
+    <button mat-fab extended color="primary" (click)="onValidateList()" [disabled]="descControl.invalid">
+        <mat-icon>check</mat-icon>
+        Valider
+    </button>
+    <button mat-fab extended color="primary" (click)="onValidateList()" [disabled]="descControl.invalid">
+        <mat-icon>exit_to_app</mat-icon>
+        Sortir
+    </button>
+    <!-- <a mat-fab extended routerLink=".">
+      <mat-icon>favorite</mat-icon>
+      Link
+    </a> -->
+</div>
+
+
+
+</section>

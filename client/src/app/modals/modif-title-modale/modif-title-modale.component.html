@@ -23,14 +23,14 @@
 
         <!-- bouton valider -->
         <button mat-fab extended color="primary" (click)="onUpdateList()" [disabled]="newTitleControl.invalid">
-            <mat-icon>playlist_add_check</mat-icon>
+            <mat-icon>check</mat-icon>
             Valider
         </button>
 
         <!-- bouton annuler -->
-        <button mat-fab extended color="warn" (click)="onCloseModale()" [disabled]="newTitleControl.invalid">
-            <mat-icon>delete_forever</mat-icon>
-            Annuler
+        <button mat-fab extended color="primary" (click)="onCloseModale()" [disabled]="newTitleControl.invalid">
+            <mat-icon>exit_to_app</mat-icon>
+            Sortir
         </button>
 
     </div>

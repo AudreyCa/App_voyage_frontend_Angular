@@ -10,8 +10,6 @@ import { ListsService } from 'src/app/services/lists/lists.service';
 })
 export class AddListModaleComponent implements OnInit {
 
-  title!: string;
-  isChecked = false;
   titleControl = new FormControl();
 
   constructor(@Inject(MAT_DIALOG_DATA) public idUser: number,
