@@ -2,13 +2,17 @@
 
     <h2>Modifier le titre de votre liste</h2>
 
+   <div class="title_to_change">
+    <p>Titre actuel de la liste :</p>
+    <p>{{dataList.list_title}}</p>
+   </div>
+
     <form>
 
         <!-- Input pour le titre de la liste -->
         <mat-form-field class="input-title" appearance="outline">
             <mat-label>Nouveau titre</mat-label>
-            <input matInput type="text" [formControl]="newTitleControl" #message maxlength="1000"
-                placeholder="Ecrivez ici ..." (keypress)="onUpdateTitle($event)" required>
+            <input matInput type="text" [formControl]="newTitleControl" #message maxlength="1000" [placeholder]="dataList.list_title" (keypress)="onUpdateTitle($event)" [value]="dataList.list_title" required>
         </mat-form-field>
 
     </form>

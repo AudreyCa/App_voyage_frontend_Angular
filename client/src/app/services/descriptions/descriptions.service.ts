@@ -49,7 +49,7 @@ export class DescriptionsService {
    * @param  {any} description
    * @returns Observable
    */
-  putDesc(id: number, description:any): Observable<any> {
+  putDesc(description:any, id: number): Observable<any> {
     return this._http.put(`${this.backend}/detail/` + id, description);
   }
 

@@ -1,1 +1,28 @@
-<p>supp-list-modale works!</p>
+<section class="add-list">
+
+    <h2>Voulez-vous supprimer cette liste ?</h2>
+    <span> >> {{dataList.list_title}} << </span>
+  
+    <mat-icon>warning</mat-icon>
+    <p>Attention !! Cette action est définitive. Vous ne pourrez plus accéder à cette liste par la suite.</p>
+
+
+    <!-- Les boutons en footer -->
+    <div class="btn-footer">
+
+        <!-- bouton valider -->
+        <button mat-fab extended color="primary" (click)="onDeleteList()">
+            <mat-icon>playlist_add_check</mat-icon>
+            Valider
+        </button>
+
+        <!-- bouton annuler -->
+        <button mat-fab extended color="warn" (click)="onCloseModale()">
+            <mat-icon>delete_forever</mat-icon>
+            Annuler
+        </button>
+
+    </div>
+
+
+</section>

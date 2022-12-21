@@ -33,8 +33,6 @@ export class ListsComponent implements OnInit {
       this._listsService.getAllListsOneUser(this.dataUserId).subscribe((listsBack: any) => {
         console.log('all list : ', listsBack)
         this.listsArray = listsBack
-        // console.log('all list : ', JSON.stringify({ data: listsBack })
-        // );
       })
     })
 
@@ -56,52 +54,52 @@ export class ListsComponent implements OnInit {
 
   /** Cette méthode sert à modifier le titre de la liste via une modale
    */
-  onClickModif() {
+  onClickModif(list:any) {
     this._matDialog.open(ModifTitleModaleComponent,
       {
         minWidth: "300px",
         enterAnimationDuration: '500ms',
         exitAnimationDuration: '500ms',
-        data: this.dataUserId
+        data: list
       }
     )
   }
 
   /** Cette méthode sert à ajouter des descriptions via une modale
    */
-  onClickAddDesc() {
+  onClickAddDesc(list:any) {
     this._matDialog.open(AddDescModaleComponent,
       {
         minWidth: "300px",
         enterAnimationDuration: '500ms',
         exitAnimationDuration: '500ms',
-        data: this.dataUserId
+        data: list
       }
     )
   }
 
   /** Cette méthode sert à supprimer la liste via une modale
    */
-  onClickSuppList() {
+  onClickSuppList(list:any) {
     this._matDialog.open(SuppListModaleComponent,
       {
         minWidth: "300px",
         enterAnimationDuration: '500ms',
         exitAnimationDuration: '500ms',
-        data: this.dataUserId
+        data: list
       }
     )
   }
 
   /** Cette méthode sert à générer la list en pdf via une modale
   */
-  onClickPrintList() {
+  onClickPrintList(list:any) {
     this._matDialog.open(PdfModaleComponent,
       {
         minWidth: "300px",
         enterAnimationDuration: '500ms',
         exitAnimationDuration: '500ms',
-        data: this.dataUserId
+        data: list
       }
     )
   }

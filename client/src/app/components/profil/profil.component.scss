@@ -18,37 +18,51 @@ section {
         display: flex;
         align-items: center;
         background-color: #e8a984;
+        position: sticky;
     }
 
-    h2 {
-        margin-bottom: 30px;
-    }
-
-    .formulaire {
-        padding: 30px;
-        border-radius: 10px;
+    .container_profil {
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
-        width: 350px;
-        background: rgba($color: white, $alpha: 0.3);
-        backdrop-filter: blur(10px);
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
         box-sizing: border-box;
+        overflow-y: scroll;
 
-        mat-form-field {
-            width: 300px;
-        } 
-
-        .sendButton {
-            margin-top: 10px;
-            width: 100%;
+        h2 {
+            margin-bottom: 30px;
         }
+    
+        .formulaire {
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            background: rgba($color: white, $alpha: 0.3);
+            backdrop-filter: blur(10px);
+            box-sizing: border-box;
+    
+            mat-form-field {
+                width: 300px;
+            } 
+    
+            .sendButton {
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    
+        .deleteButton {
+            margin-top: 20px;
+            width: 300px;
+        }
+        
     }
 
-    .deleteButton {
-        margin-top: 20px;
-        width: 300px;
-    }
 
 }

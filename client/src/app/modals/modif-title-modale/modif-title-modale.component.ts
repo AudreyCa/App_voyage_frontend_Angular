@@ -10,17 +10,19 @@ import { ListsService } from 'src/app/services/lists/lists.service';
 })
 export class ModifTitleModaleComponent implements OnInit {
 
-  title!: string;
-  isChecked = false;
   newTitleControl = new FormControl();
+  dataListId!: number;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public idUser: number,
+  constructor(@Inject(MAT_DIALOG_DATA) public dataList: any,
     private _dialogRef: MatDialogRef<ModifTitleModaleComponent>,
     private _listsService: ListsService
   ) { }
 
   ngOnInit(): void {
-    console.log('onInit idUser : ', this.idUser);
+
+    console.log('onInit dataList : ', this.dataList);
+    this.dataListId = this.dataList.list_id
+    console.log('onInit dataListId : ', this.dataListId);
   }
 
 
@@ -37,7 +39,7 @@ export class ModifTitleModaleComponent implements OnInit {
     console.log('newlisttitile :', newListTitle);
 
     // Puis, on les update dans la BDD
-    this._listsService.putList(newListTitle, this.idUser).subscribe((titleList: any) => {
+    this._listsService.putList(newListTitle, this.dataListId).subscribe((titleList: any) => {
       console.log('envoyé à la BDD : ', titleList)
     })
 

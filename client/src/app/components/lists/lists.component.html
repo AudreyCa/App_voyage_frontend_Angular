@@ -2,7 +2,7 @@
 
     <h1>Mes listes</h1>
 
-    <div class="container-list">
+    <div class="container-list" *ngIf="listsArray">
 
         <div class="lists" *ngFor="let list of listsArray">
 
@@ -11,22 +11,22 @@
 
             <div class="modale">
                 <!-- Modif titre -->
-                <div class="btn-modale" (click)="onClickModif()">
+                <div class="btn-modale" (click)="onClickModif(list)">
                     <mat-icon>create</mat-icon>
                 </div>
 
                 <!-- Ajout description -->
-                <div class="btn-modale" (click)="onClickAddDesc()">
+                <div class="btn-modale" (click)="onClickAddDesc(list)">
                     <mat-icon>view_list</mat-icon>
                 </div>
 
                 <!-- Supprimer liste -->
-                <div class="btn-modale" (click)="onClickSuppList()">
+                <div class="btn-modale" (click)="onClickSuppList(list)">
                     <mat-icon>delete_forever</mat-icon>
                 </div>
 
                 <!-- Modif titre -->
-                <div class="btn-modale" (click)="onClickPrintList()">
+                <div class="btn-modale" (click)="onClickPrintList(list)">
                     <mat-icon>print</mat-icon>
                 </div>
             </div>

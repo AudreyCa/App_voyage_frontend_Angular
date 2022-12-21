@@ -5,10 +5,19 @@
     align-items: center;
     padding: 30px;
     flex-wrap: wrap;
-    background-color: #ecb475;
+    background-color: #ecb475;   
 
     h2 {
         font-size: 25px;
+    }
+
+    .title_to_change {
+        text-align: center;
+        p:nth-child(2) {
+            color: #4051b5;
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
     
     form {

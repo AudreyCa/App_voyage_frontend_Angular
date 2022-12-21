@@ -1,6 +1,6 @@
 section {
     width: 100vw;
-box-sizing: border-box;    height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,6 +8,8 @@ box-sizing: border-box;    height: 100vh;
     background: url('^/assets/Images/fond-ecran-voyage-appli.png') no-repeat;
     background-position: bottom;
     background-size: cover;
+            box-sizing: border-box;
+        overflow-y: scroll;
 }
 
 .card{
