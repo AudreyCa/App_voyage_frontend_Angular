@@ -24,14 +24,14 @@
 
 
 <!-- Affichage des descriptions -->
-<div class="list-check-desc" *ngIf="descArray">
+<div class="list-check-desc">
     <ul *ngFor="let desc of descArray">
         <li>
             <input type="checkbox" id="checkDesc">
             <label for="checkDesc">
                 {{desc.detail_description}}
             </label>
-            <mat-icon matSuffix (click)="onDeleteDesc()">cancel</mat-icon>
+            <mat-icon matSuffix (click)="onDeleteDesc(desc.detail_id)">cancel</mat-icon>
         </li>
         
     </ul>

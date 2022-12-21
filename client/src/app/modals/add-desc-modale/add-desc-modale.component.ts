@@ -14,7 +14,6 @@ export class AddDescModaleComponent implements OnInit {
   descControl = new FormControl();
   dataListId!: number;
   descArray!: any[];
-  descId!:number;
 
   constructor(@Inject(MAT_DIALOG_DATA) public datalist: any,
     private _dialogRef: MatDialogRef<AddDescModaleComponent>,
@@ -22,12 +21,16 @@ export class AddDescModaleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Récupérer l'id de la liste en cours
     console.log('onInit datalist : ', this.datalist);
     this.dataListId = this.datalist.list_id;
     console.log(this.dataListId);
 
     // Afficher tous les listes dès le début
-    this._descServ.getAllDescOneList(this.dataListId).subscribe()
+    this._descServ.getAllDescOneList(this.dataListId).subscribe((allDesc: any) => {
+      console.log('allDesc, recu de la BDD : ', allDesc)
+      this.descArray = allDesc;
+    })
   }
 
   onAddDesc() {
@@ -62,12 +65,22 @@ export class AddDescModaleComponent implements OnInit {
   }
 
 
-  /** Cette méthode sert à supprimer une tâche par une tâche (description)
+  /** Cette méthode permet de supprimer un détail de la liste en cours
+   * @param  {number} descData
    */
-  onDeleteDesc() {
-    this._descServ.deleteDesc(this.descId).subscribe((supDesc: any) => {
-      console.log('supprimer de la BDD : ', supDesc)
+  onDeleteDesc(descData:number) {
+    
+    console.log(descData);
+
+    this._descServ.deleteDesc(descData).subscribe((deleteOneDesc: any) => {
+      console.log('allDesc, recu de la BDD : ', deleteOneDesc)
     })
+
+    this._descServ.getAllDescOneList(this.dataListId).subscribe((allDesc: any) => {
+      console.log('allDesc, recu de la BDD : ', allDesc)
+      this.descArray = allDesc;
+    })
+
   }
 
   /** Cette méthode sert à valider la modale et aussi à en sortir

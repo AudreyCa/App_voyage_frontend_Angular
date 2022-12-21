@@ -1,9 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DescriptionsService } from 'src/app/services/descriptions/descriptions.service';
 import { ListsService } from 'src/app/services/lists/lists.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pdf-modale',
@@ -12,49 +10,45 @@ import { Router } from '@angular/router';
 })
 export class PdfModaleComponent implements OnInit {
 
-  title!: string;
-  isChecked = false;
-  titleControl = new FormControl();
-  descControl = new FormControl();
+  dataListId!: number;
+  descArray!: any[];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public idUser: number,
+  constructor(@Inject(MAT_DIALOG_DATA) public datalist: any,
     private _dialogRef: MatDialogRef<PdfModaleComponent>,
-    private _listsService: ListsService,
-    private _descServ: DescriptionsService,
-    private _route: Router
+    private _descServ: DescriptionsService
   ) { }
 
   ngOnInit(): void {
-    console.log('onInit idUser : ', this.idUser);
+    // Récupérer l'id de la liste en cours
+    console.log('onInit datalist : ', this.datalist);
+    this.dataListId = this.datalist.list_id;
+    console.log(this.dataListId);
 
-    // this.titleControl = li:[this.user.user_lastName],
+    // Afficher tous les listes dès le début
+    this._descServ.getAllDescOneList(this.dataListId).subscribe((allDesc: any) => {
+      console.log('allDesc, recu de la BDD : ', allDesc)
+      this.descArray = allDesc;
+    })
   }
+  
+  /** Cette méthode permet de supprimer un détail de la liste en cours
+   * @param  {number} descData
+   */
+  onDeleteDesc(descData:number) {
+    
+    console.log(descData);
 
-  onAddTitle() {
-    // On récupère le titre de la liste
-    const titleForm = this.titleControl.value;
-    console.log('log de la value de l\'input title : ', titleForm);
+    this._descServ.deleteDesc(descData).subscribe((deleteOneDesc: any) => {
+      console.log('allDesc, recu de la BDD : ', deleteOneDesc)
+    })
 
-    const newListTitle = { list_title: titleForm }
-
-    // const newList = Object.assign(id, newListTitle)
-    // console.log('la ', newList);
-
-    // Puis, on les envoie à la BDD
-    this._listsService.postList(this.idUser, newListTitle).subscribe((titleList: any) => {
-      console.log('envoyé à la BDD : ', titleList)
+    this._descServ.getAllDescOneList(this.dataListId).subscribe((allDesc: any) => {
+      console.log('allDesc, recu de la BDD : ', allDesc)
+      this.descArray = allDesc;
     })
 
   }
-  
-  /** Cette méthode sert à valider avec la touche entrée (accessibilité)
-   * @param  {KeyboardEvent} event
-   */
-  onSendTitle(event: KeyboardEvent) {
-    if (event.code === "Enter") {
-      this.onAddTitle()
-    }
-  }
+
 
   /** Cette méthode sert à valider la modale
    */
@@ -63,7 +57,11 @@ export class PdfModaleComponent implements OnInit {
     window.location.href = "/overview/lists";
   }
 
-  onCancel() {
+
+  /** Cette méthode permet d'imprimer la liste
+   */
+  onPrint() {
+    console.log('inclure la possibilité de print ici');
     this._dialogRef.close()
     window.location.href = "/overview/lists";
   }
