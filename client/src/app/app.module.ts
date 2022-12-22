@@ -29,7 +29,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { DeleteProfilModalComponent } from './modals/delete-profil-modal/delete-profil-modal.component';
 import { AddListModaleComponent } from './modals/add-list-modale/add-list-modale.component';
 import { MatDividerModule } from '@angular/material/divider';
-import { UploadComponent } from './uploads/upload/upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ModifTitleModaleComponent } from './modals/modif-title-modale/modif-title-modale.component';
 import { AddDescModaleComponent } from './modals/add-desc-modale/add-desc-modale.component';
@@ -50,7 +49,6 @@ import { PdfModaleComponent } from './modals/pdf-modale/pdf-modale.component';
     ContactComponent,
     DeleteProfilModalComponent,
     AddListModaleComponent,
-    UploadComponent,
     ModifTitleModaleComponent,
     AddDescModaleComponent,
     SuppListModaleComponent,

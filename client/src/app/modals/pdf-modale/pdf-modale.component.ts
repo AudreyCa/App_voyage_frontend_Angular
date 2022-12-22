@@ -2,10 +2,10 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DescriptionsService } from 'src/app/services/descriptions/descriptions.service';
 
-import jspdf from 'jspdf';
-import 'jspdf-autotable';
-// const jsPDF = require('jspdf');
-// require('jspdf-autotable');
+import * as html2pdf from 'html2pdf.js';
+
+// import jspdf from 'jspdf';
+// import 'jspdf-autotable';
 
 @Component({
   selector: 'app-pdf-modale',
@@ -18,7 +18,7 @@ export class PdfModaleComponent implements OnInit {
   datalistTitle!: string;
   descArray!: any[];
 
-array = ['name', 18]
+  array = ['name', 18]
 
   constructor(@Inject(MAT_DIALOG_DATA) public datalist: any,
     private _dialogRef: MatDialogRef<PdfModaleComponent>,
@@ -38,12 +38,12 @@ array = ['name', 18]
       this.descArray = allDesc;
     })
   }
-  
+
   /** Cette méthode permet de supprimer un détail de la liste en cours
    * @param  {number} descData
    */
-  onDeleteDesc(descData:number) {
-    
+  onDeleteDesc(descData: number) {
+
     console.log(descData);
 
     this._descServ.deleteOneDesc(descData).subscribe((deleteOneDesc: any) => {
@@ -70,37 +70,20 @@ array = ['name', 18]
    */
   onGeneratePdf() {
 
-    // On instancie un objet pdf
-    const pdf = new jspdf();
-  
-    // (pdf as any).autotable({
-    //   body: this.array
-    // })
+    var element = document.getElementById('print');
 
-    pdf.setFontSize(20);
-    pdf.text('Voici votre liste', 11, 8);
+    var opt = {
+      margin: 1,
+      filename: 'liste.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
 
-    // Pour la mise-en page
-    (pdf as any).autoTable({
-      // j'y insère le titre
-      head: this.datalistTitle,
-      // Puis ce que je veux y mettre, ici, le tableau de toutes les decriptions.
-      body: this.descArray,
-      theme: 'plain',
-      // Pour personnalliser l'affichage :
-      didDrawCell: (data: { column: {index: any; }; }) => {
-      console.log(data.column.index)
-    }
-    })
+    // New Promise-based usage:
+    html2pdf().from(element).set(opt).save();
 
-    // pour que le pdf généré s'ouvre dans une nouvelle fenetre : 
-    pdf.output('dataurlnewwindow')
-
-    // Pour laisser la possibilité, à l'utilisateur de sauvegarder
-    pdf.save('liste.pdf')
-
-
-    // this._dialogRef.close()
+    this._dialogRef.close()
   }
 
 }

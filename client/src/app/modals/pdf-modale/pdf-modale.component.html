@@ -1,29 +1,34 @@
 <section class="add-list">
 
-    <!-- Titre de la liste -->
-    <h2>{{datalist.list_title}}</h2>
+    <div id="print">
+
+        <!-- Titre de la liste -->
+        <h2 class="title">{{datalist.list_title}}</h2>
 
 
-    <!-- Affichage des descriptions -->
-    <div class="list-check-desc" *ngIf="descArray">
-        <ul *ngFor="let desc of descArray">
-            <li>
-                <input type="checkbox" id="checkDesc">
-                <label for="checkDesc">
-                    {{desc.detail_description}}
-                </label>
-                <mat-icon matSuffix (click)="onDeleteDesc(desc.detail_id)">cancel</mat-icon>
-            </li>
+        <!-- Affichage des descriptions -->
+        <div class="list-check-desc" *ngIf="descArray">
+            <ul *ngFor="let desc of descArray">
+                <li>
+                    <input type="checkbox" id="checkDesc">
+                    <label for="checkDesc">
+                        {{desc.detail_description}}
+                    </label>
+                    <mat-icon matSuffix (click)="onDeleteDesc(desc.detail_id)">cancel</mat-icon>
+                </li>
 
-        </ul>
+            </ul>
+        </div>
+
     </div>
 
 
     <!-- Les boutons en footer -->
     <div class="btn-footer">
         <button mat-fab extended color="warn" (click)="onGeneratePdf()">
+
             <mat-icon> local_printshop</mat-icon>
-            Générer en PDF 
+            Générer en PDF
         </button>
         <button mat-fab extended color="primary" (click)="onValidateList()">
             <mat-icon>exit_to_app</mat-icon>
