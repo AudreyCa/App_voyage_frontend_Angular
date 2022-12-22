@@ -44,43 +44,22 @@
         height: 150px;
         overflow-y: scroll;
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 10px 10px 10px 20px;
-            width: 85%;
+        .descAdd {
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
-            flex-direction: column;
 
-
-            li {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                margin: 0;
-                padding: 0;
-                width: 250px;
-
-                input[type="checkbox"] {
-                    width: 20px;
-                    height: 20px;
-                    margin-right: 15px;
-                    cursor: pointer;
-                }
-
-                label {
-                    font-size: 15px;
-                    width: 70%;
-                }
-
-                #checkDesc:checked+label {
-                    text-decoration: line-through;
-                }
+            .input-desc {
+                border: none;
+                background-color: #ecb47500;
+                // width: 200px;
+                
+    
             }
 
-
         }
+
     }
 
     .btn-footer {

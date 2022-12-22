@@ -45,7 +45,7 @@ export class DescriptionsService {
 
 
   /** Cette méthode permet, à l'utilisateur de modifier un détail de sa liste
-   * @param  {number} id
+   * @param  {number} id // id du detail
    * @param  {any} description
    * @returns Observable
    */
@@ -55,11 +55,19 @@ export class DescriptionsService {
 
 
   /** Cette méthode permet, à l'utilisateur de supprimer une description/un détail de la liste.
-   * @param  {number} id
+   * @param  {number} id // id du detail
    * @returns Observable
    */
-  deleteDesc(id: number): Observable<any> {
+  deleteOneDesc(id: number): Observable<any> {
     return this._http.delete(`${this.backend}/detail/` + id);
+  }
+  
+  /** Cette méthode permet, à l'utilisateur de supprimer toutes les descriptions pour supprimer la liste
+   * @param  {number} id // id de la liste et non du detail
+   * @returns Observable
+   */
+  deleteAllDesc(id: number): Observable<any> {
+    return this._http.delete(`${this.backend}/alldetail/` + id);
   }
   
 

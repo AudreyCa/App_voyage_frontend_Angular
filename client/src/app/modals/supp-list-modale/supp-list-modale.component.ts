@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DescriptionsService } from 'src/app/services/descriptions/descriptions.service';
 import { ListsService } from 'src/app/services/lists/lists.service';
 
 @Component({
@@ -10,17 +11,26 @@ import { ListsService } from 'src/app/services/lists/lists.service';
 export class SuppListModaleComponent implements OnInit {
 
   dataListId!: number;
+  descArray!: any[];
 
   constructor(@Inject(MAT_DIALOG_DATA) public dataList: any,
     private _dialogRef: MatDialogRef<SuppListModaleComponent>,
-    private _listsService: ListsService
+    private _listsService: ListsService,
+    private _descServ: DescriptionsService
   ) { }
 
   ngOnInit(): void {
 
     console.log('onInit dataList : ', this.dataList);
+
     this.dataListId = this.dataList.list_id
     console.log('onInit dataListId : ', this.dataListId);
+
+    this._descServ.getAllDescOneList(this.dataListId).subscribe((dataDescription:any) => {
+      console.log('dataDescription :', dataDescription);
+      this.descArray = dataDescription;
+    })
+
   }
 
 
@@ -28,25 +38,16 @@ export class SuppListModaleComponent implements OnInit {
    */
   onDeleteList() {
 
-    this._listsService.deleteList(this.dataListId).subscribe((titleList: any) => {
-      console.log('envoyé à la BDD : ', titleList)
+    this._descServ.deleteAllDesc(this.dataListId).subscribe((deleteOneDesc: any) => {
+      console.log('allDesc, recu de la BDD : ', deleteOneDesc)
+
+      this._listsService.deleteList(this.dataListId).subscribe((titleList: any) => {
+        console.log('envoyé à la BDD : ', titleList)
+      })
+      
     })
-
-    this._dialogRef.close()
+    
     window.location.href = "/overview/lists";
-  }
-
-
-
-  /** Cette méthode sert à valider avec la touche entrée (accessibilité) puis à exectuer la methode onValidateList
-   * @param  {KeyboardEvent} event
-   */
-  onUpdateTitle(event: KeyboardEvent) {
-    if (event.code === "Enter") {
-      this.onDeleteList()
-      this._dialogRef.close()
-      window.location.href = "/overview/lists";
-    }
   }
 
 

@@ -39,23 +39,13 @@ export class ListsComponent implements OnInit {
 
   }
 
-  /** Cette méthode sert à ajouter une list via le boutton add
-  */
-  onClickPlus() {
-    this._matDialog.open(AddListModaleComponent,
-      {
-        minWidth: "300px",
-        enterAnimationDuration: '500ms',
-        exitAnimationDuration: '500ms',
-        data: this.dataUserId
-      }
-    )
-  }
 
   /** Cette méthode sert à modifier le titre de la liste via une modale
+   * @param  {any} list
    */
   onClickModif(list:any) {
-    this._matDialog.open(ModifTitleModaleComponent,
+
+    const modalTitleModif = this._matDialog.open(ModifTitleModaleComponent,
       {
         minWidth: "300px",
         enterAnimationDuration: '500ms',
@@ -63,9 +53,11 @@ export class ListsComponent implements OnInit {
         data: list
       }
     )
+
   }
 
   /** Cette méthode sert à ajouter des descriptions via une modale
+   * @param  {any} list
    */
   onClickAddDesc(list:any) {
     this._matDialog.open(AddDescModaleComponent,
@@ -79,6 +71,7 @@ export class ListsComponent implements OnInit {
   }
 
   /** Cette méthode sert à supprimer la liste via une modale
+   * @param  {any} list
    */
   onClickSuppList(list:any) {
     this._matDialog.open(SuppListModaleComponent,
@@ -91,8 +84,9 @@ export class ListsComponent implements OnInit {
     )
   }
 
-  /** Cette méthode sert à générer la list en pdf via une modale
-  */
+  /** Cette méthode sert à visualiser la liste en entier (et peut être à générer la list en pdf) via une modale
+   * @param  {any} list
+   */
   onClickPrintList(list:any) {
     this._matDialog.open(PdfModaleComponent,
       {
@@ -104,5 +98,17 @@ export class ListsComponent implements OnInit {
     )
   }
 
+    /** Cette méthode sert à ajouter une list via le boutton add
+  */
+    onClickPlus() {
+      this._matDialog.open(AddListModaleComponent,
+        {
+          minWidth: "300px",
+          enterAnimationDuration: '500ms',
+          exitAnimationDuration: '500ms',
+          data: this.dataUserId
+        }
+      )
+    }
 
 }

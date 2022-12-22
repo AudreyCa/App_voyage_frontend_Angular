@@ -21,6 +21,7 @@ export class AddDescModaleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     // Récupérer l'id de la liste en cours
     console.log('onInit datalist : ', this.datalist);
     this.dataListId = this.datalist.list_id;
@@ -31,8 +32,10 @@ export class AddDescModaleComponent implements OnInit {
       console.log('allDesc, recu de la BDD : ', allDesc)
       this.descArray = allDesc;
     })
-  }
 
+  }
+  /** Ajouter une description via l'input puis affiche la description immédiatement en dessous de l'input
+   */
   onAddDesc() {
     // On récupère la description dans l'input
     const descForm = this.descControl.value;
@@ -64,6 +67,25 @@ export class AddDescModaleComponent implements OnInit {
     }
   }
 
+  /** Cette méthode permet de modifier le description en cours
+   * @param  {number} descData
+   */
+  onUpdateDesc(newDesc:string, descData:number) {
+
+    console.log(descData);
+
+    this._descServ.putDesc(newDesc, descData).subscribe((newDataDesc: any) => {
+      console.log('newDataDesc, update dans la BDD : ', newDataDesc)
+
+      this._descServ.getAllDescOneList(this.dataListId).subscribe((allDesc: any) => {
+        console.log('allDesc, recu de la BDD : ', allDesc)
+        this.descArray = allDesc;
+      })
+      
+    }) 
+
+  }
+
 
   /** Cette méthode permet de supprimer un détail de la liste en cours
    * @param  {number} descData
@@ -72,14 +94,16 @@ export class AddDescModaleComponent implements OnInit {
     
     console.log(descData);
 
-    this._descServ.deleteDesc(descData).subscribe((deleteOneDesc: any) => {
+    this._descServ.deleteOneDesc(descData).subscribe((deleteOneDesc: any) => {
       console.log('allDesc, recu de la BDD : ', deleteOneDesc)
+
+      this._descServ.getAllDescOneList(this.dataListId).subscribe((allDesc: any) => {
+        console.log('allDesc, recu de la BDD : ', allDesc)
+        this.descArray = allDesc;
+      })
+      
     })
 
-    this._descServ.getAllDescOneList(this.dataListId).subscribe((allDesc: any) => {
-      console.log('allDesc, recu de la BDD : ', allDesc)
-      this.descArray = allDesc;
-    })
 
   }
 

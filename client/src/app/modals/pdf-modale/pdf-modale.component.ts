@@ -38,7 +38,7 @@ export class PdfModaleComponent implements OnInit {
     
     console.log(descData);
 
-    this._descServ.deleteDesc(descData).subscribe((deleteOneDesc: any) => {
+    this._descServ.deleteOneDesc(descData).subscribe((deleteOneDesc: any) => {
       console.log('allDesc, recu de la BDD : ', deleteOneDesc)
     })
 

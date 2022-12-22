@@ -36,9 +36,9 @@ export class AddListModaleComponent implements OnInit {
     // Puis, on les envoie à la BDD
     this._listsService.postList(this.idUser, newListTitle).subscribe((titleList: any) => {
       console.log('envoyé à la BDD : ', titleList)
+      this._dialogRef.close(titleList)
     })
 
-    this._dialogRef.close()
     window.location.href = "/overview/lists";
   }
 

@@ -25,16 +25,19 @@
 
 <!-- Affichage des descriptions -->
 <div class="list-check-desc">
-    <ul *ngFor="let desc of descArray">
-        <li>
-            <input type="checkbox" id="checkDesc">
-            <label for="checkDesc">
-                {{desc.detail_description}}
-            </label>
-            <mat-icon matSuffix (click)="onDeleteDesc(desc.detail_id)">cancel</mat-icon>
-        </li>
-        
-    </ul>
+
+    <div class="descAdd" *ngFor="let desc of descArray">
+
+        <input matInput type="text" class="input-desc" [value]="desc.detail_description">
+        <button type="submit" class="btn-input" (click)="onUpdateDesc(desc.detail_description, desc.detail_id)">
+            <mat-icon>spellcheck</mat-icon>
+        </button>
+        <button type="submit" class="btn-input" (click)="onDeleteDesc(desc.detail_id)">
+            <mat-icon>cancel</mat-icon>
+        </button>
+
+    </div>
+
 </div>
 
 
