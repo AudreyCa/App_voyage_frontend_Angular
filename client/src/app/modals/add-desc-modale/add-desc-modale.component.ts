@@ -55,6 +55,7 @@ export class AddDescModaleComponent implements OnInit {
       })
     })
 
+    this.descControl.reset()
 
   }
 
@@ -103,7 +104,6 @@ export class AddDescModaleComponent implements OnInit {
       })
       
     })
-
 
   }
 

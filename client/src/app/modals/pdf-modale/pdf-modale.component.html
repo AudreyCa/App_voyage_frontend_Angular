@@ -21,14 +21,10 @@
 
     <!-- Les boutons en footer -->
     <div class="btn-footer">
-        <button mat-fab extended color="warn">
+        <button mat-fab extended color="warn" (click)="onGeneratePdf()">
             <mat-icon> local_printshop</mat-icon>
-            Imprimer
+            Générer en PDF 
         </button>
-        <!-- <a mat-fab extended routerLink=".">
-            <mat-icon>favorite</mat-icon>
-            Link
-        </a> -->
         <button mat-fab extended color="primary" (click)="onValidateList()">
             <mat-icon>exit_to_app</mat-icon>
             Sortir

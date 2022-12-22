@@ -7,7 +7,7 @@
         <div class="lists" *ngFor="let list of listsArray">
 
             <!-- titre liste -->
-            <p>{{list.list_title}}</p>
+            <p (click)="onClickPrintList(list)">{{list.list_title}}</p>
 
             <div class="modale">
                 <!-- Modif titre -->
@@ -25,10 +25,10 @@
                     <mat-icon>delete_forever</mat-icon>
                 </div>
 
-                <!-- Modif titre -->
-                <div class="btn-modale" (click)="onClickPrintList(list)">
+                <!-- Afficher Liste -->
+                <!-- <div class="btn-modale" (click)="onClickPrintList(list)">
                     <mat-icon> list_alt</mat-icon>
-                </div>
+                </div> -->
             </div>
 
         </div>

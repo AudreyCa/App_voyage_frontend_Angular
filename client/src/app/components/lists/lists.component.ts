@@ -36,7 +36,6 @@ export class ListsComponent implements OnInit {
       })
     })
 
-
   }
 
 

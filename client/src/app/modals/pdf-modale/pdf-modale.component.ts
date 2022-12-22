@@ -1,7 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DescriptionsService } from 'src/app/services/descriptions/descriptions.service';
-import { ListsService } from 'src/app/services/lists/lists.service';
+
+import jspdf from 'jspdf';
+import 'jspdf-autotable';
+// const jsPDF = require('jspdf');
+// require('jspdf-autotable');
 
 @Component({
   selector: 'app-pdf-modale',
@@ -11,7 +15,10 @@ import { ListsService } from 'src/app/services/lists/lists.service';
 export class PdfModaleComponent implements OnInit {
 
   dataListId!: number;
+  datalistTitle!: string;
   descArray!: any[];
+
+array = ['name', 18]
 
   constructor(@Inject(MAT_DIALOG_DATA) public datalist: any,
     private _dialogRef: MatDialogRef<PdfModaleComponent>,
@@ -22,6 +29,7 @@ export class PdfModaleComponent implements OnInit {
     // Récupérer l'id de la liste en cours
     console.log('onInit datalist : ', this.datalist);
     this.dataListId = this.datalist.list_id;
+    this.datalistTitle = this.datalist.list_title
     console.log(this.dataListId);
 
     // Afficher tous les listes dès le début
@@ -60,10 +68,39 @@ export class PdfModaleComponent implements OnInit {
 
   /** Cette méthode permet d'imprimer la liste
    */
-  onPrint() {
-    console.log('inclure la possibilité de print ici');
-    this._dialogRef.close()
-    window.location.href = "/overview/lists";
+  onGeneratePdf() {
+
+    // On instancie un objet pdf
+    const pdf = new jspdf();
+  
+    // (pdf as any).autotable({
+    //   body: this.array
+    // })
+
+    pdf.setFontSize(20);
+    pdf.text('Voici votre liste', 11, 8);
+
+    // Pour la mise-en page
+    (pdf as any).autoTable({
+      // j'y insère le titre
+      head: this.datalistTitle,
+      // Puis ce que je veux y mettre, ici, le tableau de toutes les decriptions.
+      body: this.descArray,
+      theme: 'plain',
+      // Pour personnalliser l'affichage :
+      didDrawCell: (data: { column: {index: any; }; }) => {
+      console.log(data.column.index)
+    }
+    })
+
+    // pour que le pdf généré s'ouvre dans une nouvelle fenetre : 
+    pdf.output('dataurlnewwindow')
+
+    // Pour laisser la possibilité, à l'utilisateur de sauvegarder
+    pdf.save('liste.pdf')
+
+
+    // this._dialogRef.close()
   }
 
 }
