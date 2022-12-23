@@ -1,12 +1,51 @@
-<section class="overview">
+<mat-sidenav-container class="overview" autosize>
 
+
+    <!-- Navbar -->
+    <div class="nav-bar">
+
+        <div class="start-nav">
+            <!-- Le bouton toggle pour afficher/masquer le menu-->
+            <button type="button" mat-button (click)="right.toggle()">
+                <mat-icon matSuffix class="icon-menu">menu</mat-icon>
+            </button>
+
+            <!-- Titre à switcher -->
+            <div
+                *ngIf="titreList+titreProfil+titreContact=='' || titreList == null && titreProfil == null && titreContact == null">
+                <h2>Mes listes</h2>
+            </div>
+
+            <div *ngIf="titreList">
+                <h2>{{titreList}}</h2>
+            </div>
+            <div *ngIf="titreProfil">
+                <h2>{{titreProfil}}</h2>
+            </div>
+            <div *ngIf="titreContact">
+                <h2>{{titreContact}}</h2>
+            </div>
+        </div>
+
+        <!-- pour se déconnecter -->
+        <div class="escape" (click)="onLogOut()">
+            <mat-icon>exit_to_app</mat-icon>
+        </div>
+
+    </div>
+
+    <!-- Le contenu en router-outlet -->
     <div class="router-outlet">
         <router-outlet></router-outlet>
     </div>
 
-    <div class="side-bar">
-        <app-side-bar-right></app-side-bar-right>
-    </div>
+
+    <!-- Menu à ouvrir et fermer / side-bar -->
+    <mat-sidenav #right class="side-bar" mode="side" position="end">
+        <app-side-bar-right (titreList)="onShowTitleList($event)" (titreProfil)="onShowTitleProfil($event)"
+            (titreContact)="onShowTitleContact($event)">
+        </app-side-bar-right>
+    </mat-sidenav>
 
 
-</section>
+</mat-sidenav-container>

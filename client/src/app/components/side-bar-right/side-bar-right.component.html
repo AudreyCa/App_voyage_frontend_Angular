@@ -2,20 +2,20 @@
 
     <h2>Menu</h2>
     <div class="nav">
-            <a routerLink="profil" routerLinkActive="active">
-                <mat-icon>person</mat-icon><p>Mon compte</p>
+            <a routerLink="profil" routerLinkActive="active" (click)="onSendTitleProfil()">
+                <mat-icon>person</mat-icon><p>Mon profil</p>
             </a>
 
-            <a routerLink="lists" routerLinkActive="active">
+            <a routerLink="lists" routerLinkActive="active" (click)="onSendTitleList()">
                 <mat-icon>list_alt</mat-icon><p>Mes listes</p>
             </a>
 
-            <a routerLink="contact" routerLinkActive="active">
-                <mat-icon>contact_support</mat-icon><p>Nous contacter</p>
+            <a routerLink="contact" routerLinkActive="active" (click)="onSendTitleContact()">
+                <mat-icon>contact_support</mat-icon><p>Mon contact</p>
             </a>
 
             <div class="escape" (click)="onLogOut()">
-                <p>Se déconnecter </p>
+                <p>Se déconnecter</p>
                 <mat-icon>exit_to_app</mat-icon>
             </div>
     </div>

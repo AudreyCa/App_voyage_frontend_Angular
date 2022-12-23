@@ -1,18 +1,62 @@
-.overview  {
+.overview {
     display: flex;
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
-    .router-outlet {
-        width: 80%;
-        height: 100%;
-        background: url('^/assets/Images/Fond-ecran-overview.png') no-repeat;
-        background-position: center;
-        background-size: cover;
+    background: url('^/assets/Images/Fond-ecran-overview.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+    .nav-bar {
+        width: 100vw;
+        height: 100px;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #e8a984;
+        position: sticky;
+        top: 0;
+        
+        .start-nav {
+            display: flex;
+            align-items: center;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+    
+                .icon-menu {
+                    font-size: 20px;
+                }
+            }
+    
+            h2 {
+                font-size: 25px;
+                font-weight: 500;
+                display: flex;
+                margin-top: 15px;
+            }
+        }
+        
+        .escape {
+            padding-right: 30px;
+        }
     }
+
+
+    .router-outlet {
+        width: 100vw;
+        height: calc(100% - 100px);
+    }
+
+
     .side-bar {
-        width: 20%;
+        width: 250px;
         height: 100%;
         background-color: #e8a984;
     }

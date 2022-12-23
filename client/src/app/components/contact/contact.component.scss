@@ -2,25 +2,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url('^/assets/Images/Fond-ecran-overview.png') no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
+    // background: url('^/assets/Images/Fond-ecran-overview.png') no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    width: 100vw;
     height: 100%;
     
 
-    h1 {
-        width: 100%;
-        padding-left: 5%;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        font-size: 25px;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        background-color: #e8a984;
-        position: sticky;
-    }
+    // h1 {
+    //     width: 100%;
+    //     padding-left: 5%;
+    //     padding-top: 30px;
+    //     padding-bottom: 30px;
+    //     font-size: 25px;
+    //     font-weight: 500;
+    //     display: flex;
+    //     align-items: center;
+    //     background-color: #e8a984;
+    //     position: sticky;
+    // }
 
     .container_contact {
         display: flex;
@@ -37,7 +37,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 80%;
+            width: 350px;
             margin-top: 20px;
             padding: 30px;
             border-radius: 10px;
