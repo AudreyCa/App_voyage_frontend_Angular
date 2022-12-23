@@ -55,11 +55,19 @@ export class ListsService {
 
 
   /** Cette méthode permet, à l'utilisateur de supprimer sa liste.
-   * @param  {number} id
+   * @param  {number} id //  celui de la liste
    * @returns Observable
    */
   deleteList(id: number): Observable<any> {
     return this._http.delete(`${this.backend}/list/` + id);
   }
+
+    /** Cette méthode permet de supprimer toutes les listes pour supprimer l'utilisateur.
+   * @param  {number} id //  celui de l'utilisateur
+   * @returns Observable
+   */
+    deleteAllList(id: number): Observable<any> {
+      return this._http.delete(`${this.backend}/lists/` + id);
+    }
 
 }
