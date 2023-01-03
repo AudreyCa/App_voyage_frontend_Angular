@@ -6,13 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "electron": "electron .",
-    "electron-build": "ng build && electron ."
+    "electron-build": "ng build && electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@capacitor/cli": "^4.6.1",
-    "electron": "^22.0.0"
+    "electron-prebuilt-compile": "22.0.0"
   },
   "dependencies": {
     "@capacitor/android": "^4.6.1",
