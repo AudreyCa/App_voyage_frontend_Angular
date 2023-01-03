@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DescriptionsService } from 'src/app/services/descriptions/descriptions.service';
 
 import * as html2pdf from 'html2pdf.js';
+import { withInterceptors } from '@angular/common/http';
 
 // import jspdf from 'jspdf';
 // import 'jspdf-autotable';
@@ -17,8 +18,6 @@ export class PdfModaleComponent implements OnInit {
   dataListId!: number;
   datalistTitle!: string;
   descArray!: any[];
-
-  array = ['name', 18]
 
   constructor(@Inject(MAT_DIALOG_DATA) public datalist: any,
     private _dialogRef: MatDialogRef<PdfModaleComponent>,
@@ -70,18 +69,19 @@ export class PdfModaleComponent implements OnInit {
    */
   onGeneratePdf() {
 
-    var element = document.getElementById('print');
+    var element = document.getElementById('add-list');
 
-    var opt = {
-      margin: 1,
+    var option = {
+      margin: 0.5,
       filename: 'liste.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      html2canvas: { scale: 1 },
+      jsPDF: { unit: 'in', 
+              format: 'letter', 
+              orientation: 'portrait'
+            }
     };
 
-    // New Promise-based usage:
-    html2pdf().from(element).set(opt).save();
+    html2pdf().from(element).set(option).save();
 
     this._dialogRef.close()
   }

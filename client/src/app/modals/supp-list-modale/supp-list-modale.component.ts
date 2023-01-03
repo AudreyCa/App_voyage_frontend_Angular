@@ -38,14 +38,9 @@ export class SuppListModaleComponent implements OnInit {
    */
   onDeleteList() {
 
-    this._descServ.deleteAllDesc(this.dataListId).subscribe((deleteOneDesc: any) => {
-      console.log('allDesc, recu de la BDD : ', deleteOneDesc)
-
       this._listsService.deleteList(this.dataListId).subscribe((titleList: any) => {
         console.log('envoyé à la BDD : ', titleList)
       })
-      
-    })
     
     window.location.href = "/overview/lists";
   }
