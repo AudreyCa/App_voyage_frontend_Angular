@@ -34,6 +34,7 @@ export class AddDescModaleComponent implements OnInit {
     })
 
   }
+
   /** Ajouter une description via l'input puis affiche la description immédiatement en dessous de l'input
    */
   onAddDesc() {
@@ -55,6 +56,7 @@ export class AddDescModaleComponent implements OnInit {
       })
     })
 
+    // clean l'input
     this.descControl.reset()
 
   }

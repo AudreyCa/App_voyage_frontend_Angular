@@ -7,7 +7,9 @@
         <div class="lists" *ngFor="let list of listsArray">
 
             <!-- titre liste -->
-            <p (click)="onClickPrintList(list)">{{list.list_title}}</p>
+            <div class="title-list" (click)="onClickPrintList(list)">
+                <p>{{list.list_title}}</p>
+            </div>
 
             <div class="modale">
                 <!-- Modif titre -->

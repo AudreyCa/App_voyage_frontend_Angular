@@ -34,6 +34,7 @@ import { ModifTitleModaleComponent } from './modals/modif-title-modale/modif-tit
 import { AddDescModaleComponent } from './modals/add-desc-modale/add-desc-modale.component';
 import { SuppListModaleComponent } from './modals/supp-list-modale/supp-list-modale.component';
 import { PdfModaleComponent } from './modals/pdf-modale/pdf-modale.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { PdfModaleComponent } from './modals/pdf-modale/pdf-modale.component';
     HttpClientModule,
     MatButtonModule,
     MatDividerModule,
-    FileUploadModule
+    FileUploadModule,
+    DragDropModule
   ],
   providers: [
     {

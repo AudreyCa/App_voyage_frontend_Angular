@@ -26,6 +26,7 @@
     .form-desc {
         width: 260px;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -46,16 +47,24 @@
 
         .descAdd {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            height: auto;
 
             .input-desc {
                 border: none;
                 background-color: #ecb47500;
-                // width: 200px;
-                
-    
+                width: 70%;
+                height: 150%;
+                margin-bottom: 10px;
+                text-overflow: ellipsis;
+            }
+            .btn-input {
+                border: none;
+                background-color: #ecb47500;
+                width: 10px;
+                margin: 0 10px 0 0;
             }
 
         }

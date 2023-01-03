@@ -45,10 +45,24 @@
             font-weight: 500;
             padding: 20px;
 
-            p {
+            .title-list {
                 width: 90%;
-                height: 70%;
+                height: 75%;
+                margin-bottom: 5%;
                 text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                overflow: hidden;
+
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    -webkit-box-orient: vertical;
+                }
             }
 
             .modale {
@@ -71,6 +85,7 @@
                 }
             } 
         }
+
         .add {
             display: flex;
             width: 220px;
