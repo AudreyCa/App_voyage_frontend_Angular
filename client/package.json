@@ -2,7 +2,9 @@
   "name": "client",
   "version": "0.0.0",
   "main": "./dist/client/main.js",
-  "authors": ["Audrey"],
+  "authors": [
+    "Audrey"
+  ],
   "description": "Une application web pour organiser ses vacances avec des To Do Lists",
   "scripts": {
     "ng": "ng",
