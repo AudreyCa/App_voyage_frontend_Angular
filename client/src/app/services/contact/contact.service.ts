@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ContactService {
 
-  backendContact = 'http://localhost:8080/contact';
+  // backendContact = 'http://localhost:8080/contact';
+  backendContact = 'https://app-voyage-back.onrender.com';
 
   constructor(private _http: HttpClient) { }
 

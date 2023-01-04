@@ -9,7 +9,8 @@ import { User } from 'src/app/models/user.model';
 })
 export class DataUserService {
 
-  backend = 'http://localhost:8080';
+  // backend = 'http://localhost:8080';
+  backend = 'https://app-voyage-back.onrender.com';
 
   
   constructor(private _http: HttpClient) { }

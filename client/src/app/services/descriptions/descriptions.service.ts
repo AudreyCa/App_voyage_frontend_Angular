@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class DescriptionsService {
 
-  backend = 'http://localhost:8080';
+  // backend = 'http://localhost:8080';
+  backend = 'https://app-voyage-back.onrender.com';
 
   
   constructor(private _http: HttpClient) { }
