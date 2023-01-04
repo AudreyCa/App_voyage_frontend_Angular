@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "electron": "electron .",
     "electron-build": "ng build && electron .",
-    "start": "electron-forge start",
+    "forge": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "start": "ng serve"
   },
   "author": "",
   "license": "ISC",

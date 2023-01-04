@@ -8,12 +8,13 @@
   "description": "Une application web pour organiser ses vacances avec des To Do Lists",
   "scripts": {
     "ng": "ng",
-    "start": "electron-forge start",
+    "forge": "electron-forge start",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "start": "ng serve"
   },
   "private": true,
   "dependencies": {
