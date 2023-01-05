@@ -10,7 +10,8 @@
     "forge": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "start": "ng serve"
+    "start": "ng serve",
+    "build": "ng build"
   },
   "author": "",
   "license": "ISC",
