@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ListsService } from 'src/app/services/lists/lists.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-list-modale',
@@ -14,7 +15,8 @@ export class AddListModaleComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public idUser: number,
     private _dialogRef: MatDialogRef<AddListModaleComponent>,
-    private _listsService: ListsService
+    private _listsService: ListsService,
+    private _route: Router
   ) { }
 
   ngOnInit(): void {
@@ -39,7 +41,7 @@ export class AddListModaleComponent implements OnInit {
       this._dialogRef.close(titleList)
     })
 
-    // window.location.reload()
+   this._route.navigate(['/overview/lists'])
 
     // window.location.href = "/overview/lists";
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DescriptionsService } from 'src/app/services/descriptions/descriptions.service';
+import { Router } from '@angular/router';
 
 import * as html2pdf from 'html2pdf.js';
 import { withInterceptors } from '@angular/common/http';
@@ -21,7 +22,8 @@ export class PdfModaleComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public datalist: any,
     private _dialogRef: MatDialogRef<PdfModaleComponent>,
-    private _descServ: DescriptionsService
+    private _descServ: DescriptionsService,
+    private _route: Router
   ) { }
 
   ngOnInit(): void {
@@ -62,7 +64,8 @@ export class PdfModaleComponent implements OnInit {
   onValidateList() {
     this._dialogRef.close()
     // window.location.href = "/overview/lists";
-    window.location.reload()
+    // window.location.reload()
+    this._route.navigate(['/overview/lists'])
   }
 
 

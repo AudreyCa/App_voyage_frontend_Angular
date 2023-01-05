@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ListsService } from 'src/app/services/lists/lists.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modif-title-modale',
@@ -15,7 +16,8 @@ export class ModifTitleModaleComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public dataList: any,
     private _dialogRef: MatDialogRef<ModifTitleModaleComponent>,
-    private _listsService: ListsService
+    private _listsService: ListsService,
+    private _route: Router
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +47,8 @@ export class ModifTitleModaleComponent implements OnInit {
     })
 
     // window.location.href = "/overview/lists";
-    window.location.reload()
+    // window.location.reload()
+    this._route.navigate(['/overview/lists'])
   }
 
 

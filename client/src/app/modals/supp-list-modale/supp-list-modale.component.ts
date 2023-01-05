@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DescriptionsService } from 'src/app/services/descriptions/descriptions.service';
 import { ListsService } from 'src/app/services/lists/lists.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supp-list-modale',
@@ -16,7 +17,8 @@ export class SuppListModaleComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public dataList: any,
     private _dialogRef: MatDialogRef<SuppListModaleComponent>,
     private _listsService: ListsService,
-    private _descServ: DescriptionsService
+    private _descServ: DescriptionsService,
+    private _route: Router
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +44,8 @@ export class SuppListModaleComponent implements OnInit {
         console.log('envoyé à la BDD : ', titleList)
       })
     
-    window.location.href = "/overview/lists";
+    // window.location.href = "/overview/lists";
+    this._route.navigate(['/overview/lists'])
   }
 
 
