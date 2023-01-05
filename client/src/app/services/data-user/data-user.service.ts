@@ -10,8 +10,8 @@ import { environment } from 'src/environments/environment';
 })
 export class DataUserService {
 
-  backend = 'https://app-voyage-back.onrender.com';
-  // backend = `${environment.API_URL}`;
+  // backend = 'https://app-voyage-back.onrender.com';
+  backend = `${environment.API_URL}`;
 
   
   constructor(private _http: HttpClient) { }

@@ -9,19 +9,21 @@ import {
 import { catchError, Observable } from 'rxjs';
 import { DataUserService } from '../services/data-user/data-user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
   // backendUrl = "http://localhost:8080";
-  backendUrl = "https://app-voyage-back.onrender.com";
+  // backendUrl = "https://app-voyage-back.onrender.com";
+  backendUrl = `${environment.API_URL}`;
 
   constructor(private _dataBack: DataUserService,
     private _snackBar: MatSnackBar) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     
-    console.log('request auth interceptor', this.backendUrl, request.url)
+    console.log('request auth interceptor', request.url)
 
     const token = this._dataBack.getToken();
 
