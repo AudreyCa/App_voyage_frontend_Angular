@@ -45,7 +45,7 @@ export class SuppListModaleComponent implements OnInit {
       })
     
     // window.location.href = "/overview/lists";
-    this._route.navigate(['/overview/lists'])
+    this._route.navigate(['/overview'])
   }
 
 

@@ -4,7 +4,7 @@ import { DescriptionsService } from 'src/app/services/descriptions/descriptions.
 import { Router } from '@angular/router';
 
 import * as html2pdf from 'html2pdf.js';
-import { withInterceptors } from '@angular/common/http';
+// import { withInterceptors } from '@angular/common/http';
 
 // import jspdf from 'jspdf';
 // import 'jspdf-autotable';
@@ -65,7 +65,7 @@ export class PdfModaleComponent implements OnInit {
     this._dialogRef.close()
     // window.location.href = "/overview/lists";
     // window.location.reload()
-    this._route.navigate(['/overview/lists'])
+    this._route.navigate(['/overview'])
   }
 
 
