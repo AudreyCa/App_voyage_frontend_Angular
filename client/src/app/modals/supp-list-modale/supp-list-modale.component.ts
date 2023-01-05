@@ -42,8 +42,7 @@ export class SuppListModaleComponent implements OnInit {
         console.log('envoyé à la BDD : ', titleList)
       })
     
-    // window.location.href = "/overview/lists";
-    window.location.reload()
+    window.location.href = "/overview/lists";
   }
 
 
