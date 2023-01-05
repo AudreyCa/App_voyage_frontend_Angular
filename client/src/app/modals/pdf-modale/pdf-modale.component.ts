@@ -63,9 +63,6 @@ export class PdfModaleComponent implements OnInit {
    */
   onValidateList() {
     this._dialogRef.close()
-    // window.location.href = "/overview/lists";
-    // window.location.reload()
-    this._route.navigate(['/overview'])
   }
 
 
