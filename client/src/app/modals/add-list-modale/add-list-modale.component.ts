@@ -39,7 +39,7 @@ export class AddListModaleComponent implements OnInit {
       this._dialogRef.close(titleList)
     })
 
-    window.location.href = "/overview/lists";
+    // window.location.href = "/overview/lists";
   }
 
 
@@ -50,8 +50,6 @@ export class AddListModaleComponent implements OnInit {
   onSendTitle(event: KeyboardEvent) {
     if (event.code === "Enter") {
       this.onValidateList()
-      this._dialogRef.close()
-      window.location.href = "/overview/lists";
     }
   }
 
