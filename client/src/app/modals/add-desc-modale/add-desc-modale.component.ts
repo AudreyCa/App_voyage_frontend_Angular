@@ -113,7 +113,8 @@ export class AddDescModaleComponent implements OnInit {
    */
   onValidateList() {
     this._dialogRef.close()
-    window.location.href = "/overview/lists";
+    // window.location.href = "/overview/lists";
+    window.location.reload()
   }
 
 

@@ -44,7 +44,8 @@ export class ModifTitleModaleComponent implements OnInit {
       this._dialogRef.close(titleList);
     })
 
-    window.location.href = "/overview/lists";
+    // window.location.href = "/overview/lists";
+    window.location.reload()
   }
 
 
@@ -55,8 +56,6 @@ export class ModifTitleModaleComponent implements OnInit {
   onUpdateTitle(event: KeyboardEvent) {
     if (event.code === "Enter") {
       this.onUpdateList()
-      this._dialogRef.close()
-      window.location.href = "/overview/lists";
     }
   }
 
