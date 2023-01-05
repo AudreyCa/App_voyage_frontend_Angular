@@ -39,7 +39,7 @@ export class AddListModaleComponent implements OnInit {
       this._dialogRef.close(titleList)
     })
 
-    // window.location.href = "/overview/lists";
+    window.location.href = "/overview/lists";
   }
 
 
