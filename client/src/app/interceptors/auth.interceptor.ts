@@ -28,7 +28,7 @@ export class AuthInterceptor implements HttpInterceptor {
     // Pour éviter les conflits avec les API :
     // Si la requete inclus notre adresse backend..
     // la requete est immuable donc on la clone et on y met le token
-    if (request.url.includes(this.backendUrl)) {
+    if (request.url.includes(`${this.backendUrl}`)) {
       const dolly = request.clone({
         headers : request.headers.set('Authorization', `Bearer ${token}`)})
         

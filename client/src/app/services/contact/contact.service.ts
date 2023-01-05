@@ -8,13 +8,13 @@ import { environment } from 'src/environments/environment';
 })
 export class ContactService {
 
-  backendContact = 'https://app-voyage-back.onrender.com';
-  // backendContact = `${environment.API_URL}`;
+  backend = 'https://app-voyage-back.onrender.com';
+  // backend = `${environment.API_URL}`;
 
   constructor(private _http: HttpClient) { }
 
   postMsg(msg:any): Observable<any> {
-    return this._http.post(this.backendContact, msg);
+    return this._http.post(`${this.backend}`, msg);
   }
 
 }
