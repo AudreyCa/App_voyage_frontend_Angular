@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user.model';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { User } from 'src/app/models/user.model';
 export class DataUserService {
 
   // backend = 'http://localhost:8080';
-  backend = 'https://app-voyage-back.onrender.com';
+  backend = `${environment.API_URL}`;
 
   
   constructor(private _http: HttpClient) { }
