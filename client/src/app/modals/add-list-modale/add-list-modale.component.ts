@@ -42,8 +42,8 @@ export class AddListModaleComponent implements OnInit {
     })
 
 
-    //  this._route.navigate(['/overview/lists'])
-    window.location.reload();
+     this._route.navigate(['/overview/lists'])
+    // window.location.reload();
     // window.location.href = "/overview/lists";
 
     this._dialogRef.close()
