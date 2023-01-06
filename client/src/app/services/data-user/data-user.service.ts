@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class DataUserService {
 
-  // backend = 'https://app-voyage-back.onrender.com/';
+  // backend = 'https://app-voyage-back.onrender.com';
   backend = `${environment.API_URL}`;
 
   
@@ -25,7 +25,7 @@ export class DataUserService {
    * @returns Observable de type any
    */
   postUser(registerValues: User): Observable<any> {
-    return this._http.post(`${this.backend}register`, registerValues);
+    return this._http.post(`${this.backend}/register`, registerValues);
   }
 
   /** Cette méthode permet de vérifier si le mdp et le mail de l'utilisateur sont bons et d'obtenir un token si c'est bon.
@@ -33,7 +33,7 @@ export class DataUserService {
    * @returns Observable
    */
   postLogin(loginUser: User): Observable<any> {
-    return this._http.post(`${this.backend}login`, loginUser);
+    return this._http.post(`${this.backend}/login`, loginUser);
   }
 
   /** Cette méthode permet de récupérer le token stocké dans le localstorage pour l'auth.interceptor
@@ -46,7 +46,7 @@ export class DataUserService {
    * @returns Observable
    */
   getUser(): Observable<any> {
-    return this._http.get(`${this.backend}user`);
+    return this._http.get(`${this.backend}/user`);
   }
 
   /** Cette méthode permet, à l'utilisateur de modifier ces informations.
@@ -55,7 +55,7 @@ export class DataUserService {
    * @returns Observable
    */
   putUser(id: number, updateDataUser: User): Observable<any> {
-    return this._http.put(`${this.backend}user/` + id, updateDataUser);
+    return this._http.put(`${this.backend}/user` + id, updateDataUser);
   }
 
   /** Cette méthode permet, à l'utilisateur de supprimer son profil.
@@ -63,7 +63,7 @@ export class DataUserService {
    * @returns Observable
    */
   deleteUser(id: number): Observable<any> {
-    return this._http.delete(`${this.backend}user/` + id);
+    return this._http.delete(`${this.backend}/user` + id);
   }
 
 }
