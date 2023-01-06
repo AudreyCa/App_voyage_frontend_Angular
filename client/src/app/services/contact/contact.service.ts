@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 })
 export class ContactService {
 
-  // backend = 'https://app-voyage-back.onrender.com';
   backend = `${environment.API_URL}`;
 
   constructor(private _http: HttpClient) { }

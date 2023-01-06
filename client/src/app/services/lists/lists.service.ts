@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 })
 export class ListsService {
 
-  // backend = 'https://app-voyage-back.onrender.com';
   backend = `${environment.API_URL}`;
 
   
@@ -42,7 +41,7 @@ export class ListsService {
    * @returns Observable
    */
   getOneListOneUser(id: number): Observable<any> {
-    return this._http.get(`${this.backend}/onelist` + id);
+    return this._http.get(`${this.backend}/onelist/` + id);
   }
 
 
@@ -52,7 +51,7 @@ export class ListsService {
    * @returns Observable
    */
   putList(newList: any, id: number): Observable<any> {
-    return this._http.put(`${this.backend}/list` + id, newList);
+    return this._http.put(`${this.backend}/list/` + id, newList);
   }
 
 
@@ -61,7 +60,7 @@ export class ListsService {
    * @returns Observable
    */
   deleteList(id: number): Observable<any> {
-    return this._http.delete(`${this.backend}/list` + id);
+    return this._http.delete(`${this.backend}/list/` + id);
   }
 
     /** Cette méthode permet de supprimer toutes les listes pour supprimer l'utilisateur.
@@ -69,7 +68,7 @@ export class ListsService {
    * @returns Observable
    */
     deleteAllList(id: number): Observable<any> {
-      return this._http.delete(`${this.backend}/lists` + id);
+      return this._http.delete(`${this.backend}/lists/` + id);
     }
 
 }

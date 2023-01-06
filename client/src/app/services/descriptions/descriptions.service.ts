@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 })
 export class DescriptionsService {
 
-  // backend = 'https://app-voyage-back.onrender.com';
   backend = `${environment.API_URL}`;
 
   
@@ -24,7 +23,7 @@ export class DescriptionsService {
    * @returns Observable
    */
   postDesc(id: number, description: any): Observable<any> {
-    return this._http.post(`${this.backend}/detail` + id, description);
+    return this._http.post(`${this.backend}/detail/` + id, description);
   }
 
 
@@ -33,7 +32,7 @@ export class DescriptionsService {
    * @returns Observable
    */
   getAllDescOneList(id: number): Observable<any> {
-    return this._http.get(`${this.backend}/detail` + id);
+    return this._http.get(`${this.backend}/detail/` + id);
   }
 
 
@@ -42,7 +41,7 @@ export class DescriptionsService {
    * @returns Observable
    */
   getOneDescOneList(id: number): Observable<any> {
-    return this._http.get(`${this.backend}/onedetail` + id);
+    return this._http.get(`${this.backend}/onedetail/` + id);
   }
 
 
@@ -52,7 +51,7 @@ export class DescriptionsService {
    * @returns Observable
    */
   putDesc(description:any, id: number): Observable<any> {
-    return this._http.put(`${this.backend}/detail` + id, description);
+    return this._http.put(`${this.backend}/detail/` + id, description);
   }
 
 
@@ -61,7 +60,7 @@ export class DescriptionsService {
    * @returns Observable
    */
   deleteOneDesc(id: number): Observable<any> {
-    return this._http.delete(`${this.backend}/detail` + id);
+    return this._http.delete(`${this.backend}/detail/` + id);
   }
   
   /** Cette méthode permet, à l'utilisateur de supprimer toutes les descriptions pour supprimer la liste
@@ -69,7 +68,7 @@ export class DescriptionsService {
    * @returns Observable
    */
   deleteAllDesc(id: number): Observable<any> {
-    return this._http.delete(`${this.backend}/alldetail` + id);
+    return this._http.delete(`${this.backend}/alldetail/` + id);
   }
   
 

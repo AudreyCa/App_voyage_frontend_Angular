@@ -14,8 +14,6 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  // backendUrl = "http://localhost:8080";
-  // backendUrl = "https://app-voyage-back.onrender.com";
   backendUrl = `${environment.API_URL}`;
 
   constructor(private _dataBack: DataUserService,

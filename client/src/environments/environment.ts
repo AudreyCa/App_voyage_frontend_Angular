@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   API_URL: 'https://app-voyage-back.onrender.com'
+  // API_URL: 'http://127.0.0.1:8080'
 };
 
 /*
