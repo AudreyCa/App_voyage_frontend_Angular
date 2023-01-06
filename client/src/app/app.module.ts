@@ -35,6 +35,9 @@ import { AddDescModaleComponent } from './modals/add-desc-modale/add-desc-modale
 import { SuppListModaleComponent } from './modals/supp-list-modale/supp-list-modale.component';
 import { PdfModaleComponent } from './modals/pdf-modale/pdf-modale.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { APP_BASE_HREF } from '@angular/common';
+import { LocationStrategyComponent } from './location/location-strategy/location-strategy.component';
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -53,7 +56,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ModifTitleModaleComponent,
     AddDescModaleComponent,
     SuppListModaleComponent,
-    PdfModaleComponent
+    PdfModaleComponent,
+    LocationStrategyComponent
   ],
   imports: [
     BrowserModule,
@@ -83,8 +87,12 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
-    }
+    },
+    {provide: APP_BASE_HREF, useValue: '/overview'}
+//  {provide:LocationStrategy, useClass: HashLocationStrategy}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,    
+  ]
 })
 export class AppModule { }
