@@ -17,18 +17,9 @@ export class DeleteProfilModalComponent implements OnInit{
   constructor(@Inject(MAT_DIALOG_DATA) public idUser:number,
    private _dialogRef: MatDialogRef<DeleteProfilModalComponent>,
     private _dataServ: DataUserService,
-    // private _listsServ : ListsService,
     private _route: Router) { }
 
-    ngOnInit(): void {
-  
-      // this._listsServ.getAllListsOneUser(this.idUser).subscribe((response: any) => {
-      //   console.log('data du user envoyé du backend: ' + JSON.stringify(response))
-      //   this.allListArray = JSON.stringify(response)
-      //   console.log(this.allListArray)
-      // })
-
-    }
+    ngOnInit(): void {}
 
   onDeleteProfil(idUser: number) {
 

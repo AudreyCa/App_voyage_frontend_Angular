@@ -46,9 +46,11 @@ export class ModifTitleModaleComponent implements OnInit {
       this._dialogRef.close(titleList);
     })
 
-    // window.location.href = "/overview/lists";
+    window.location.href = "/overview/lists";
     // window.location.reload()
     // this._route.navigate(['/overview/lists'])
+
+    this._dialogRef.close()
   }
 
 
