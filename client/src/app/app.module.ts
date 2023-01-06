@@ -86,7 +86,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       useClass: AuthInterceptor,
       multi: true,
     },
-    {provide:LocationStrategy, useClass: HashLocationStrategy}
+    {
+      provide:LocationStrategy,
+      useClass: HashLocationStrategy
+    }
     // {provide: APP_BASE_HREF, useValue: '/overview'}
   ],
   bootstrap: [
