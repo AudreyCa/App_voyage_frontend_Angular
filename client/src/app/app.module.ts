@@ -35,7 +35,7 @@ import { AddDescModaleComponent } from './modals/add-desc-modale/add-desc-modale
 import { SuppListModaleComponent } from './modals/supp-list-modale/supp-list-modale.component';
 import { PdfModaleComponent } from './modals/pdf-modale/pdf-modale.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // import { APP_BASE_HREF } from '@angular/common';
 
 
@@ -85,11 +85,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
-    },
-    {
-      provide:LocationStrategy,
-      useClass: HashLocationStrategy
     }
+    // {
+    //   provide:LocationStrategy,
+    //   useClass: HashLocationStrategy
+    // }
     // {provide: APP_BASE_HREF, useValue: '/overview'}
   ],
   bootstrap: [
