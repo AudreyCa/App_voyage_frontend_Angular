@@ -22,8 +22,7 @@ export class PdfModaleComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public datalist: any,
     private _dialogRef: MatDialogRef<PdfModaleComponent>,
-    private _descServ: DescriptionsService,
-    private _route: Router
+    private _descServ: DescriptionsService
   ) { }
 
   ngOnInit(): void {
