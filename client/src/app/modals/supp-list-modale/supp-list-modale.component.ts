@@ -42,11 +42,11 @@ export class SuppListModaleComponent implements OnInit {
 
       this._listsService.deleteList(this.dataListId).subscribe((titleList: any) => {
         console.log('envoyé à la BDD : ', titleList)
+        window.location.reload();
+        this._dialogRef.close(titleList)
       })
       
-      window.location.reload();
-      this._dialogRef.close()
-      
+
     // window.location.href = "/overview/lists";
     // this._route.navigate(['/overview/lists'])
 

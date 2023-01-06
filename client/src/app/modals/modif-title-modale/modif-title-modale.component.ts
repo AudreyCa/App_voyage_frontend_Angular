@@ -43,10 +43,10 @@ export class ModifTitleModaleComponent implements OnInit {
     // Puis, on les update dans la BDD
     this._listsService.putList(newListTitle, this.dataListId).subscribe((titleList: any) => {
       console.log('envoyé à la BDD : ', titleList)
+      window.location.reload();
+      this._dialogRef.close(titleList)
     })
      
-        window.location.reload();
-        this._dialogRef.close()
 
     // window.location.href = "/overview/lists";
     // this._route.navigate(['/overview/lists'])
