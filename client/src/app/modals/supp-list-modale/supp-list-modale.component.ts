@@ -45,10 +45,6 @@ export class SuppListModaleComponent implements OnInit {
         window.location.reload();
         this._dialogRef.close(titleList)
       })
-      
-
-    // window.location.href = "/overview/lists";
-    // this._route.navigate(['/overview/lists'])
 
   }
 
