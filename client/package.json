@@ -6,13 +6,14 @@
   "description": "Une application web pour organiser ses vacances avec des To Do Lists",
   "scripts": {
     "ng": "ng",
+    "electron": "electron .",
     "forge": "electron-forge start",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "start": "ng serve"
+    "start": "electron-forge start"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "bootstrap": "^5.2.3",
     "electron-squirrel-startup": "^1.0.0",
     "faker": "^5.5.3",
     "hammerjs": "^2.0.8",
