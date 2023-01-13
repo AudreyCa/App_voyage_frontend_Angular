@@ -1,0 +1,32 @@
+.add-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  flex-wrap: wrap;
+  background-color: #ecb475;
+  min-width: 220px;
+}
+.add-list h2 {
+  font-size: 25px;
+  text-align: center;
+}
+.add-list span {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #4051b5;
+}
+.add-list p {
+  text-align: center;
+  margin-top: 5px;
+  font-weight: 500;
+}
+.add-list .btn-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.add-list .btn-footer button {
+  margin: 10px;
+}/*# sourceMappingURL=supp-list-modale.component.css.map */

@@ -1,0 +1,53 @@
+.overview {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url("^/assets/Images/Fond-ecran-overview.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.overview .nav-bar {
+  width: 100vw;
+  height: 100px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e8a984;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.overview .nav-bar .start-nav {
+  display: flex;
+  align-items: center;
+}
+.overview .nav-bar .start-nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.overview .nav-bar .start-nav button .icon-menu {
+  font-size: 20px;
+}
+.overview .nav-bar .start-nav h2 {
+  font-size: 25px;
+  font-weight: 500;
+  display: flex;
+  margin-top: 15px;
+}
+.overview .nav-bar .escape {
+  padding-right: 30px;
+}
+.overview .router-outlet {
+  width: 100vw;
+  height: calc(100% - 100px);
+}
+.overview .side-bar {
+  width: 250px;
+  height: 100%;
+  background-color: #e8a984;
+}/*# sourceMappingURL=overview.component.css.map */

@@ -1,0 +1,12 @@
+.modale-delete {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.modale-delete .boutons {
+  display: flex;
+  justify-content: space-around;
+}/*# sourceMappingURL=delete-profil-modal.component.css.map */

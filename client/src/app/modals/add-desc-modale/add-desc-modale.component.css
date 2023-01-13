@@ -1,0 +1,86 @@
+.add-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  background: rgba(236, 180, 117, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  min-height: 250px;
+  min-width: 300px;
+  overflow-y: scroll;
+}
+.add-list h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.add-list .detail {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.add-list .form-desc {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add-list .form-desc .input-desc {
+  min-width: 200px;
+  height: 50px;
+  margin-bottom: 35px;
+  display: flex;
+}
+.add-list .list-check-desc {
+  width: 100%;
+  height: 150px;
+  overflow-y: scroll;
+}
+.add-list .list-check-desc .descAdd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.add-list .list-check-desc .descAdd .input-desc {
+  border: none;
+  background-color: rgba(236, 180, 117, 0);
+  width: 70%;
+  height: 150%;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+}
+.add-list .list-check-desc .descAdd .btn-input {
+  border: none;
+  background-color: rgba(236, 180, 117, 0);
+  width: 10px;
+  margin: 0 10px 0 0;
+}
+.add-list .btn-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.add-list .btn-footer button {
+  margin: 10px;
+}
+
+.btn-validate {
+  margin-left: 10px;
+  height: 55px;
+  width: 50px;
+  background-color: #4051b5;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+h2,
+p {
+  text-align: center;
+}/*# sourceMappingURL=add-desc-modale.component.css.map */
