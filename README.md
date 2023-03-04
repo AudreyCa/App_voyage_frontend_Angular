@@ -1,4 +1,4 @@
-# Application voyage Angular/Node.js/PostgreSQL
+# Travel app with Angular/Node.js/PostgreSQL
 
 This project was carried out during the training of Application Designer Developer at Digifab, while learning Angular.
 
@@ -38,7 +38,7 @@ This project is the last realized during my training (outside internship). The g
 - Prepare and execute test plans for an application: I ensured the proper functioning of the application by performing tests throughout its development. I also used Postman to test the backend routes.
 - Prepare and execute the deployment of an application: I deployed the application on Render (web host)
 
-### Implementation steps
+## Implementation steps
 
 ---
 
@@ -56,13 +56,13 @@ This project is the last realized during my training (outside internship). The g
 
 Throughout the project, technology watches were shared within the team.
 
-### Deployment
+## Deployment
 
 ---
 
 Render : [https://organisez-vos-voyages.onrender.com/](https://organisez-vos-voyages.onrender.com/)
 
-### Contributors
+## Contributors
 
 ---
 
