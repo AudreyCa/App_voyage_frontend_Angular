@@ -19,7 +19,7 @@
           "options": {
             "allowedCommonJsDependencies": [
               "lodash"
-           ],
+          ],
             "outputPath": "dist/client",
             "index": "src/index.html",
             "main": "src/main.ts",

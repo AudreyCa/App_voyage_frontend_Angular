@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: app-voyage
+    runtime: node
+    buildCommand: npm ci && npm run build --configuration production
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
